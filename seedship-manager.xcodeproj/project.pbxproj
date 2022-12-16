@@ -14,6 +14,8 @@
 		FAA40B9B294C6DF800FF153B /* seedship_managerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40B9A294C6DF800FF153B /* seedship_managerTests.swift */; };
 		FAA40BA5294C6DF800FF153B /* seedship_managerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BA4294C6DF800FF153B /* seedship_managerUITests.swift */; };
 		FAA40BA7294C6DF800FF153B /* seedship_managerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BA6294C6DF800FF153B /* seedship_managerUITestsLaunchTests.swift */; };
+		FAA40BBA294C6F8200FF153B /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BB9294C6F8200FF153B /* PersistenceController.swift */; };
+		FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		FAA40BA0294C6DF800FF153B /* seedship-managerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seedship-managerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA40BA4294C6DF800FF153B /* seedship_managerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seedship_managerUITests.swift; sourceTree = "<group>"; };
 		FAA40BA6294C6DF800FF153B /* seedship_managerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seedship_managerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAA40BB9294C6F8200FF153B /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		FAA40BBC294C78EB00FF153B /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		FAA40B88294C6DF600FF153B /* seedship-manager */ = {
 			isa = PBXGroup;
 			children = (
+				FAA40BB3294C6EBE00FF153B /* core-data */,
 				FAA40B89294C6DF600FF153B /* seedship_managerApp.swift */,
 				FAA40B8B294C6DF600FF153B /* ContentView.swift */,
 				FAA40B8D294C6DF800FF153B /* Assets.xcassets */,
@@ -125,6 +130,15 @@
 				FAA40BA6294C6DF800FF153B /* seedship_managerUITestsLaunchTests.swift */,
 			);
 			path = "seedship-managerUITests";
+			sourceTree = "<group>";
+		};
+		FAA40BB3294C6EBE00FF153B /* core-data */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40BB9294C6F8200FF153B /* PersistenceController.swift */,
+				FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */,
+			);
+			path = "core-data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA40B8C294C6DF600FF153B /* ContentView.swift in Sources */,
+				FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */,
 				FAA40B8A294C6DF600FF153B /* seedship_managerApp.swift in Sources */,
+				FAA40BBA294C6F8200FF153B /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +599,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAA40BBC294C78EB00FF153B /* db.xcdatamodel */,
+			);
+			currentVersion = FAA40BBC294C78EB00FF153B /* db.xcdatamodel */;
+			path = db.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FAA40B7E294C6DF600FF153B /* Project object */;
 }

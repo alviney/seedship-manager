@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct seedship_managerApp: App {
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistenceController.viewContext)
         }
     }
 }

@@ -8,15 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\CrewMember.name),
+    ]) var members: FetchedResults<CrewMember>
+    
+    func loadData() {
+        print(members.count)
+        if (members.count == 0) {
+            for _ in 0..<2 {
+                let member = CrewMember(context: managedObjectContext)
+                member.name = "Nero Ren"
+                member.age = 43
+                member.id =  UUID()
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Render")
+            List {
+                ForEach(members) { member in
+                    Text(member.name ?? "Unkown")
+                }
+            }
         }
         .padding()
+        .onAppear(perform: loadData)
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
