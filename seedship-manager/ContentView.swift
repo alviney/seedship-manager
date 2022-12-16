@@ -16,6 +16,14 @@ struct ContentView: View {
     
     func loadData() {
         print(members.count)
+        for family in UIFont.familyNames {
+             print(family)
+
+             for names in UIFont.fontNames(forFamilyName: family){
+             print("== \(names)")
+             }
+        }
+        
         if (members.count == 0) {
             for _ in 0..<2 {
                 let member = CrewMember(context: managedObjectContext)
@@ -27,16 +35,8 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("Render")
-            List {
-                ForEach(members) { member in
-                    Text(member.name ?? "Unkown")
-                }
-            }
-        }
-        .padding()
-        .onAppear(perform: loadData)
+        HomeView()
+            .onAppear(perform: loadData)
     }
     
 }

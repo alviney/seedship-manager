@@ -16,6 +16,8 @@
 		FAA40BA7294C6DF800FF153B /* seedship_managerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BA6294C6DF800FF153B /* seedship_managerUITestsLaunchTests.swift */; };
 		FAA40BBA294C6F8200FF153B /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BB9294C6F8200FF153B /* PersistenceController.swift */; };
 		FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */; };
+		FAA40BC1294D0B7A00FF153B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BC0294D0B7A00FF153B /* HomeView.swift */; };
+		FAA40BC4294D19D600FF153B /* Aldrich-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40BC3294D199C00FF153B /* Aldrich-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		FAA40BA6294C6DF800FF153B /* seedship_managerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seedship_managerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FAA40BB9294C6F8200FF153B /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		FAA40BBC294C78EB00FF153B /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
+		FAA40BC0294D0B7A00FF153B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FAA40BC3294D199C00FF153B /* Aldrich-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aldrich-Regular.ttf"; sourceTree = "<group>"; };
+		FAA40BC5294D1B3D00FF153B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +103,11 @@
 		FAA40B88294C6DF600FF153B /* seedship-manager */ = {
 			isa = PBXGroup;
 			children = (
+				FAA40BC5294D1B3D00FF153B /* Info.plist */,
+				FAA40BC2294D194800FF153B /* Fonts */,
 				FAA40BB3294C6EBE00FF153B /* core-data */,
+				FAA40BBE294D08C300FF153B /* Components */,
+				FAA40BBF294D08CA00FF153B /* Pages */,
 				FAA40B89294C6DF600FF153B /* seedship_managerApp.swift */,
 				FAA40B8B294C6DF600FF153B /* ContentView.swift */,
 				FAA40B8D294C6DF800FF153B /* Assets.xcassets */,
@@ -139,6 +148,29 @@
 				FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */,
 			);
 			path = "core-data";
+			sourceTree = "<group>";
+		};
+		FAA40BBE294D08C300FF153B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FAA40BBF294D08CA00FF153B /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40BC0294D0B7A00FF153B /* HomeView.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		FAA40BC2294D194800FF153B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40BC3294D199C00FF153B /* Aldrich-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA40BC4294D19D600FF153B /* Aldrich-Regular.ttf in Resources */,
 				FAA40B91294C6DF800FF153B /* Preview Assets.xcassets in Resources */,
 				FAA40B8E294C6DF800FF153B /* Assets.xcassets in Resources */,
 			);
@@ -273,6 +306,7 @@
 			files = (
 				FAA40B8C294C6DF600FF153B /* ContentView.swift in Sources */,
 				FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */,
+				FAA40BC1294D0B7A00FF153B /* HomeView.swift in Sources */,
 				FAA40B8A294C6DF600FF153B /* seedship_managerApp.swift in Sources */,
 				FAA40BBA294C6F8200FF153B /* PersistenceController.swift in Sources */,
 			);
@@ -436,6 +470,7 @@
 				DEVELOPMENT_TEAM = GWMR79XQ6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "seedship-manager/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -465,6 +500,7 @@
 				DEVELOPMENT_TEAM = GWMR79XQ6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "seedship-manager/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
