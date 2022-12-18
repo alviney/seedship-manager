@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var showingSheet = false
     
     var body: some View {
-        ZStack {
-            Color("CardBackgroundColor").ignoresSafeArea()
-            VStack {
-                Text("Home")
-                    .font(Font.custom("Aldrich", size: 20))
-            }
-            .foregroundColor(Color.white)
+        Button("Show Sheet") {
+            showingSheet.toggle()
+        }
+        .sheet(isPresented: $showingSheet) {
+            CrewDatabase()
         }
     }
     

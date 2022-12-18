@@ -18,6 +18,14 @@
 		FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */; };
 		FAA40BC1294D0B7A00FF153B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BC0294D0B7A00FF153B /* HomeView.swift */; };
 		FAA40BC4294D19D600FF153B /* Aldrich-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40BC3294D199C00FF153B /* Aldrich-Regular.ttf */; };
+		FAA40BC8294D94A300FF153B /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BC7294D94A300FF153B /* TextModifiers.swift */; };
+		FAA40BCA294D95CE00FF153B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BC9294D95CE00FF153B /* Constants.swift */; };
+		FAA40BCE294DE21300FF153B /* CrewMemberItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BCD294DE21300FF153B /* CrewMemberItem.swift */; };
+		FAA40BD0294E553900FF153B /* VStackModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BCF294E553900FF153B /* VStackModifiers.swift */; };
+		FAA40BD5294E6F5B00FF153B /* HeaderTechnical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BD4294E6F5B00FF153B /* HeaderTechnical.swift */; };
+		FAA40BD7294F207100FF153B /* CrewDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BD6294F207100FF153B /* CrewDatabase.swift */; };
+		FAA40BD9294F272000FF153B /* HorizontalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BD8294F272000FF153B /* HorizontalDivider.swift */; };
+		FAA40BDB294F29A600FF153B /* SubheaderTechnical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BDA294F29A600FF153B /* SubheaderTechnical.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,14 @@
 		FAA40BC0294D0B7A00FF153B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FAA40BC3294D199C00FF153B /* Aldrich-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aldrich-Regular.ttf"; sourceTree = "<group>"; };
 		FAA40BC5294D1B3D00FF153B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FAA40BC7294D94A300FF153B /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
+		FAA40BC9294D95CE00FF153B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FAA40BCD294DE21300FF153B /* CrewMemberItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberItem.swift; sourceTree = "<group>"; };
+		FAA40BCF294E553900FF153B /* VStackModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStackModifiers.swift; sourceTree = "<group>"; };
+		FAA40BD4294E6F5B00FF153B /* HeaderTechnical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTechnical.swift; sourceTree = "<group>"; };
+		FAA40BD6294F207100FF153B /* CrewDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDatabase.swift; sourceTree = "<group>"; };
+		FAA40BD8294F272000FF153B /* HorizontalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDivider.swift; sourceTree = "<group>"; };
+		FAA40BDA294F29A600FF153B /* SubheaderTechnical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubheaderTechnical.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +121,8 @@
 			children = (
 				FAA40BC5294D1B3D00FF153B /* Info.plist */,
 				FAA40BC2294D194800FF153B /* Fonts */,
-				FAA40BB3294C6EBE00FF153B /* core-data */,
+				FAA40BB3294C6EBE00FF153B /* Core Data */,
+				FAA40BC6294D946300FF153B /* View Modifiers */,
 				FAA40BBE294D08C300FF153B /* Components */,
 				FAA40BBF294D08CA00FF153B /* Pages */,
 				FAA40B89294C6DF600FF153B /* seedship_managerApp.swift */,
@@ -141,18 +158,21 @@
 			path = "seedship-managerUITests";
 			sourceTree = "<group>";
 		};
-		FAA40BB3294C6EBE00FF153B /* core-data */ = {
+		FAA40BB3294C6EBE00FF153B /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
 				FAA40BB9294C6F8200FF153B /* PersistenceController.swift */,
 				FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */,
 			);
-			path = "core-data";
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		FAA40BBE294D08C300FF153B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FAA40BD3294E6F4600FF153B /* Layouts */,
+				FAA40BCB294DE1F300FF153B /* Lists */,
+				FAA40BD8294F272000FF153B /* HorizontalDivider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -161,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA40BC0294D0B7A00FF153B /* HomeView.swift */,
+				FAA40BD6294F207100FF153B /* CrewDatabase.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -171,6 +192,41 @@
 				FAA40BC3294D199C00FF153B /* Aldrich-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FAA40BC6294D946300FF153B /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40BC7294D94A300FF153B /* TextModifiers.swift */,
+				FAA40BC9294D95CE00FF153B /* Constants.swift */,
+				FAA40BCF294E553900FF153B /* VStackModifiers.swift */,
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		FAA40BCB294DE1F300FF153B /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40BCC294DE1FD00FF153B /* Items */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		FAA40BCC294DE1FD00FF153B /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40BCD294DE21300FF153B /* CrewMemberItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		FAA40BD3294E6F4600FF153B /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40BD4294E6F5B00FF153B /* HeaderTechnical.swift */,
+				FAA40BDA294F29A600FF153B /* SubheaderTechnical.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,11 +360,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA40BD0294E553900FF153B /* VStackModifiers.swift in Sources */,
 				FAA40B8C294C6DF600FF153B /* ContentView.swift in Sources */,
+				FAA40BDB294F29A600FF153B /* SubheaderTechnical.swift in Sources */,
+				FAA40BC8294D94A300FF153B /* TextModifiers.swift in Sources */,
+				FAA40BD7294F207100FF153B /* CrewDatabase.swift in Sources */,
+				FAA40BD5294E6F5B00FF153B /* HeaderTechnical.swift in Sources */,
 				FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */,
 				FAA40BC1294D0B7A00FF153B /* HomeView.swift in Sources */,
+				FAA40BCA294D95CE00FF153B /* Constants.swift in Sources */,
 				FAA40B8A294C6DF600FF153B /* seedship_managerApp.swift in Sources */,
 				FAA40BBA294C6F8200FF153B /* PersistenceController.swift in Sources */,
+				FAA40BCE294DE21300FF153B /* CrewMemberItem.swift in Sources */,
+				FAA40BD9294F272000FF153B /* HorizontalDivider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
