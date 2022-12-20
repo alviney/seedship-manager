@@ -8,20 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.managedObjectContext) var moc
     
-    @FetchRequest(sortDescriptors: [
-        SortDescriptor(\CrewMember.name),
-    ]) var members: FetchedResults<CrewMember>
+    @FetchRequest(sortDescriptors: []) var members: FetchedResults<CrewMember>
     
     func loadData() {
         if (members.count == 0) {
-            for _ in 0..<2 {
-                let member = CrewMember(context: managedObjectContext)
-                member.name = "Nero Ren"
-                member.age = 43
-                member.id =  UUID()
-            }
+            seedCrewMembers(moc: moc)
         }
     }
     
@@ -33,7 +26,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    static var previews: some View {        
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

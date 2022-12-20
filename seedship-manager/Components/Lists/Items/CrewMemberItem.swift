@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct CrewMemberItem: View {
+    @State var member: CrewMember
+    
     var body: some View {
         ZStack {
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
-                    Text("Alex Viney")
+                    Text(String(member.name!))
                     HStack {
                         Text("")
                             .frame(width: 1)
@@ -20,11 +22,10 @@ struct CrewMemberItem: View {
                     }
                     .frame(maxWidth: .infinity)
                     HStack {
-    
-                        Text("Age: 33")
+                        Text("Age: " + String(member.age))
                             .fixedSize()
                             .modifier(BodyExtraSmall())
-                        Text("Weight: 88kg")
+                        Text("Weight: \(member.weight)kg")
                             .fixedSize()
                             .modifier(BodyExtraSmall())
                     }
@@ -38,17 +39,17 @@ struct CrewMemberItem: View {
             .padding(12)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color(CustomColor.BorderDefault.rawValue), lineWidth: 2)
+                    .stroke(Color(CustomColor.BorderSecondary.rawValue), lineWidth: 2)
             )
         }
         .padding(2)
         .frame(maxWidth: .infinity)
         .modifier(BodySmall())
     }
-    
-    struct CrewMemberItem_Previews: PreviewProvider {
-        static var previews: some View {
-            CrewMemberItem()
-        }
-    }
+//
+//    struct CrewMemberItem_Previews: PreviewProvider {
+//        static var previews: some View {
+//            CrewMemberItem(member: CrewMember(name: "Nero Ren", age: 43, id: UUID()))
+//        }
+//    }
 }

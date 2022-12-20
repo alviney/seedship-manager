@@ -8,11 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct TitleSmall: ViewModifier {
+struct Title: ViewModifier {
+    @State var color: Color = Color(CustomColor.TitleFont.rawValue)
     func body(content: Content) -> some View {
         content
-            .font(Font.custom(CustomFont.Technical.rawValue, size: 20))
-            .foregroundColor(Color(CustomColor.TitleFont.rawValue))
+            .font(Font.custom(CustomFont.Technical.rawValue, size: 24))
+            .textCase(.uppercase)
+            .foregroundColor(color)
     }
 }
 
