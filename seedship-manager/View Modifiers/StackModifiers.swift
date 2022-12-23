@@ -20,7 +20,7 @@ struct BorderBlock: ViewModifier {
     @State var color: Color = Color(CustomColor.BorderDefault.rawValue)
     @State var hasPadding: Bool = true
     func body(content: Content) -> some View {
-        content        
+        content
             .if(hasPadding) { view in
                 view.padding(16)
             }

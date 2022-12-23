@@ -15,7 +15,7 @@ struct SubHeaderTechnical: View {
         HStack {
             HStack {
                 Text(header)
-                    .modifier(Subheader())
+                    .modifier(AppText())
             }
             .modifier(SubheaderBlock())
         }

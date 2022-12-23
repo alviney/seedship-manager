@@ -5,56 +5,54 @@
 //  Created by Alex Viney on 18/12/2022.
 //
 
-import Foundation
 import SwiftUI
 
 struct CrewDatabaseView: View {
     @FetchRequest(sortDescriptors: []) var members: FetchedResults<CrewMember>
-    @State var showingSheet: Bool = false
+    @State private var selectedMember: CrewMember? = nil
     
     var body: some View {
-        ZStack {
-            Color(CustomColor.CardBackground.rawValue).ignoresSafeArea()
-            VStack(spacing: 20) {
-                HeaderTechnical(header: "Crew")
+        NavigationStack {
+            ZStack {
+                Color(CustomColor.CardBackground.rawValue).ignoresSafeArea()
                 
-                VStack {
-                    Text("Connection: Live")
-                        .modifier(BodyExtraSmall(color: Color.white))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading], 16)
-                    
-                    VStack(spacing: 24) {
-                        SubHeaderTechnical(header: "Database")
-                            .padding([.top], 16)
-                                                
-                        List (members) { member in
-                            Button {
-                                showingSheet.toggle()
-                            } label: {
-                                CrewMemberItem(member: member)
-//                                    .background( NavigationLink("", destination: ).opacity(0))
+                VStack(spacing: 20) {
+                    VStack {
+                        Text("Connection: Live")
+                            .modifier(AppText(type: TextType.extraSmallBody))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding([.leading], 16)
+                        
+                        VStack(spacing: 24) {
+                            SubHeaderTechnical(header: "Database")
+                                .padding([.top], 16)
+                            
+                            List (members) { member in
+                                Button {
+                                    self.selectedMember = member
+                                } label: {
+                                    CrewMemberItem(member: member)
+                                }
+                                .modifier(ListItemPlain())
                             }
-                            .listRowSeparator(.hidden)
-                            .listRowInsets(.init(top: 10, leading: 0, bottom: 0, trailing: 0))
-                            .buttonStyle(.plain)
-                            .sheet(isPresented: $showingSheet) {
+                            .sheet(item: $selectedMember) { member in
                                 CrewMemberView(member: member)
                             }
+                            .modifier(ListPlain())
+                            
+                            HorizontalDivider()
+                            
+                            Spacer()
                         }
-                        .listStyle(.plain)
-                        .listRowSeparator(.hidden)
-                        
-                        HorizontalDivider()
+                        .modifier(ContentBlock())
                         
                         Spacer()
                     }
-                    .modifier(ContentBlock())
-                    
-                    Spacer()
                 }
+                .padding([.leading, .trailing, .bottom], 24)
+                .padding([.top], 12)
             }
-            .padding(24)
+            .modifier(Nav(title: "Crew"))
         }
     }
     

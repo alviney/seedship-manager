@@ -50,14 +50,9 @@ struct PersistenceController  {
     // A test configuration for SwiftUI previews
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
-        
-        // Create 10 example programming languages.
-        for _ in 0..<10 {
-            let member = CrewMember(context: controller.container.viewContext)
-            member.name = "Nero Ren"
-            member.age = 43
-            member.id =  UUID()
-        }
+    
+        seedCrewMembers(moc: controller.container.viewContext)
+        seedFacilities(moc: controller.container.viewContext)
         
         return controller
     }()

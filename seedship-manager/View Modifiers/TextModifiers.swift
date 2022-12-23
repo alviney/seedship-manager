@@ -8,47 +8,65 @@
 import Foundation
 import SwiftUI
 
-struct Title: ViewModifier {
-    @State var color: Color = Color(CustomColor.TitleFont.rawValue)
-    func body(content: Content) -> some View {
-        content
-            .font(Font.custom(CustomFont.Technical.rawValue, size: 24))
-            .textCase(.uppercase)
-            .foregroundColor(color)
+enum TextType {
+    case largeTitle
+    case mediumTitle
+    case smallTitle
+    
+    case largeTitleAlt
+    case mediumTitleAlt
+    case smallTitleAlt
+    
+    case smallBody
+    case extraSmallBody
+    
+    case smallBodyAlt
+    case extraSmallBodyAlt
+    
+    func getFont() -> Font? {
+        return Font.custom(CustomFont.Technical.rawValue, size: size)
+    }
+    
+    var size: CGFloat {
+        switch self {
+        case .largeTitle, .largeTitleAlt: return 24
+        case .mediumTitle, .mediumTitleAlt: return 20
+        case .smallTitle, .smallTitleAlt: return 16
+        case .smallBody, .smallBodyAlt: return 16
+        case .extraSmallBody, .extraSmallBodyAlt: return 10
+        }
+    }
+    
+    func getColor() -> Color {
+        var color: String = CustomColor.TitleFont.rawValue
+        
+        switch self {
+        case .largeTitle, .mediumTitle, .smallTitle, .smallBody, .extraSmallBody:
+            color = CustomColor.TitleFont.rawValue
+        default:
+            color = CustomColor.TitleAltFont.rawValue
+        }
+        
+        return Color(color)
+    }
+    
+    func getCase() -> Text.Case? {
+        switch self {
+        case .largeTitle, .largeTitleAlt, .mediumTitle, .mediumTitleAlt, .smallTitle, .smallTitleAlt:
+            return .uppercase
+        default:
+            return nil
+        }
     }
 }
 
-struct TitleModal: ViewModifier {
+struct AppText: ViewModifier {
+    @State var type: TextType = TextType.smallBody
+    
     func body(content: Content) -> some View {
         content
-            .font(Font.custom(CustomFont.Technical.rawValue, size: 20))
-            .textCase(.uppercase)
-            .foregroundColor(Color(CustomColor.TitleModalFont.rawValue))
-    }
-}
-
-struct Subheader: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(Font.custom(CustomFont.Technical.rawValue, size: 16))
-            .foregroundColor(Color(CustomColor.TitleFont.rawValue))
-    }
-}
-
-struct BodySmall: ViewModifier {
-    @State var color: Color = Color(CustomColor.BodyFont.rawValue)
-    func body(content: Content) -> some View {
-        content
-            .font(Font.custom(CustomFont.Technical.rawValue, size: 16))
-            .foregroundColor(color)
-    }
-}
-
-struct BodyExtraSmall: ViewModifier {
-    @State var color: Color = Color(CustomColor.BodyFont.rawValue)
-    func body(content: Content) -> some View {
-        content
-            .font(Font.custom(CustomFont.Technical.rawValue, size: 10))
-            .foregroundColor(color)
+            .font(type.getFont())
+            .textCase(type.getCase())
+            .foregroundColor(type.getColor())
     }
 }

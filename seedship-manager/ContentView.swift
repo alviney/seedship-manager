@@ -14,7 +14,8 @@ struct ContentView: View {
     
     func loadData() {
         if (members.count == 0) {
-            seedCrewMembers(moc: moc)
+            seedFacilities(moc: moc)
+            seedCrewMembers(moc: moc)            
         }
     }
     

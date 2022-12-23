@@ -14,7 +14,7 @@ struct HeaderTechnical: View {
     var body: some View {
         HStack {
             Text(header)
-                .modifier(TitleModal())
+                .modifier(AppText())
                 .frame(alignment: .leading)
             
             HorizontalDivider()

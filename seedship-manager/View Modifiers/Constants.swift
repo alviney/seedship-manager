@@ -15,9 +15,11 @@ enum CustomColor: String {
     case DefaultBackground = "ColorDefaultBackground"
     case CardBackground = "ColorCardBackground"
     case SubheaderBackground = "ColorSubheaderBackground"
+    case TabViewBackground = "ColorTabViewBackground"
+    case ManualViewBackground = "ColorManualBackground"
     
     case TitleFont = "ColorTitleFont"
-    case TitleModalFont = "ColorTitleModalFont";
+    case TitleAltFont = "ColorTitleAltFont";
     case BodyFont = "ColorBodyFont"
     
     case BorderDefault = "ColorBorderDefault"

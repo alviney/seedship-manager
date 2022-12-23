@@ -5,39 +5,42 @@
 //  Created by Alex Viney on 19/12/2022.
 //
 
-import Foundation
 import SwiftUI
 
 struct HomeView: View {
-    @State private var showingSheet = false
+    @State private var selection = 1
     
-    var body: some View {
-        NavigationStack {
-            ZStack {
-                Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
-                
-                VStack {
-                    HStack {
-                        Header(header: "Seed ship manager")
-                        Image(systemName: "book.closed")
-                            .font(.system(size: 30.0))
-                            .foregroundColor(Color(CustomColor.TitleFont.rawValue))
-                    }
-                    .padding(12)
-                    
-                    NavigationButton(title: "Facilities") {
-                        CrewDatabaseView()
-                    }
-                    
-                    Spacer()
-                    
-                    NavigationButton(title: "Crew") {
-                        CrewDatabaseView()
-                    }
+    init() {
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.init(name: "Aldrich", size: 16)! ], for: .normal)
+        
+        UIBarButtonItem.appearance()
+             .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Aldrich", size: 14.0)!], for: .normal)
+//
+//        UITabBar.appearance().backgroundColor = UIColor(Color(CustomColor.TabViewBackground.rawValue))
+    }
+    
+    var body: some View {                
+        TabView(selection: $selection) {
+            CrewDatabaseView()
+                .tabItem {
+                    Text("Crew").modifier(AppText(type: TextType.smallTitle))
+                    Icon(name: "person.3.fill")
                 }
-                .background(Image(CustomImage.HomeHero.rawValue))
-            }
+                .tag(0)
+            HubView()
+                .tabItem {
+                    Text("Hub").modifier(AppText(type: TextType.smallTitle))
+                    Icon(name: "tv.inset.filled")
+                }
+                .tag(1)
+            FacilitiesView()
+                .tabItem {
+                    Text("Rooms").modifier(AppText(type: TextType.smallTitle))
+                    Icon(name: "door.left.hand.open", size: 8)
+                }
+                .tag(2)
         }
+        .tint(Color.white)
     }
     
     struct HomeView_Previews: PreviewProvider {

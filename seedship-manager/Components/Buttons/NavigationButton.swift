@@ -11,6 +11,7 @@ import SwiftUI
 
 struct NavigationButton<Destination: View>: View {
     @State var title: String = "Link"
+    @State var color: Color = Color(CustomColor.TitleFont.rawValue)
     @ViewBuilder var destination: Destination
     
     var body: some View {
@@ -18,10 +19,9 @@ struct NavigationButton<Destination: View>: View {
             destination
         } label: {
             Text(title)
-                .frame(maxWidth: .infinity)
-                .modifier(Title())
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .modifier(AppText(type: TextType.mediumTitle))
                 .modifier(BorderBlock())
-                .padding(12)
         }
     }
 }
