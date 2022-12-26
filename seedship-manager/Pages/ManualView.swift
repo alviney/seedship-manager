@@ -16,9 +16,14 @@ struct ManualView: View {
                 VStack {
                     Text("Manual")
                         .modifier(AppText(type: TextType.largeTitle))
-                    Spacer()
+                    
+                    VStack {
+                        Spacer()
+                    }
+                    .modifier(Border())
+                    .padding(12)
                 }
-                .padding(12)
+                .padding(24)
             }
         }
     }

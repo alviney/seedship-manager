@@ -11,7 +11,7 @@ struct ContentBlock: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(16)
-            .background(Color.white)
+            .background(Color(CustomColor.CardContentBackground.rawValue))
             .cornerRadius(12)
     }
 }

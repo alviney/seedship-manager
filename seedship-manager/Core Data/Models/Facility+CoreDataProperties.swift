@@ -2,7 +2,7 @@
 //  Facility+CoreDataProperties.swift
 //  seedship-manager
 //
-//  Created by Alex Viney on 21/12/2022.
+//  Created by Alex Viney on 24/12/2022.
 //
 //
 
@@ -18,6 +18,25 @@ extension Facility {
 
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
+    @NSManaged public var controls: FacilityControls?
+    @NSManaged public var members: NSSet?
+
+}
+
+// MARK: Generated accessors for members
+extension Facility {
+
+    @objc(addMembersObject:)
+    @NSManaged public func addToMembers(_ value: CrewMember)
+
+    @objc(removeMembersObject:)
+    @NSManaged public func removeFromMembers(_ value: CrewMember)
+
+    @objc(addMembers:)
+    @NSManaged public func addToMembers(_ values: NSSet)
+
+    @objc(removeMembers:)
+    @NSManaged public func removeFromMembers(_ values: NSSet)
 
 }
 

@@ -15,7 +15,7 @@ struct HomeView: View {
         
         UIBarButtonItem.appearance()
              .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Aldrich", size: 14.0)!], for: .normal)
-//
+
 //        UITabBar.appearance().backgroundColor = UIColor(Color(CustomColor.TabViewBackground.rawValue))
     }
     

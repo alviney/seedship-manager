@@ -21,9 +21,11 @@ enum BorderColor {
 
 struct Border: ViewModifier {
     @State var borderColor: BorderColor = BorderColor.primary
+    @State var padding: CGFloat = 12
+    
     func body(content: Content) -> some View {
         content
-            .padding(12)
+            .padding(padding)
             .frame(maxWidth: .infinity)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)

@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CrewMember" representedClassName="CrewMember" syncable="YES" codeGenerationType="class">
+    <entity name="CrewMember" representedClassName="CrewMember" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Facility" inverseName="members" inverseEntity="Facility"/>
     </entity>
     <entity name="Facility" representedClassName="Facility" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="controls" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FacilityControls" inverseName="facility" inverseEntity="FacilityControls"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CrewMember" inverseName="room" inverseEntity="CrewMember"/>
+    </entity>
+    <entity name="FacilityControls" representedClassName="FacilityControls" syncable="YES" codeGenerationType="class">
+        <attribute name="lifeSupportOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="powerOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="waterOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="facility" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Facility" inverseName="controls" inverseEntity="Facility"/>
     </entity>
 </model>

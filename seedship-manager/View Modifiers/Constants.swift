@@ -12,8 +12,11 @@ enum CustomFont: String {
 }
 
 enum CustomColor: String {
+    case ActiveAccent = "ColorActiveAccent"
+    
     case DefaultBackground = "ColorDefaultBackground"
     case CardBackground = "ColorCardBackground"
+    case CardContentBackground = "ColorCardContentBackground"
     case SubheaderBackground = "ColorSubheaderBackground"
     case TabViewBackground = "ColorTabViewBackground"
     case ManualViewBackground = "ColorManualBackground"
@@ -28,4 +31,5 @@ enum CustomColor: String {
 
 enum CustomImage: String {
     case HomeHero = "ImageSpaceship01"
+    case BioFarm = "ImageBioFarm"
 }

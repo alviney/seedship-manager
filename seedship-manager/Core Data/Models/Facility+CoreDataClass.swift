@@ -16,9 +16,9 @@ public class Facility: NSManagedObject {
     public func view() -> some View {
         switch self.name {
         case "Bio Farm":
-            return AnyView(BioFarmView())
+            return AnyView(BioFarmView(facility: self))
         default:
-            return AnyView(BioFarmView())
+            return AnyView(FacilityView(facility: self))
         }
     }
 }
