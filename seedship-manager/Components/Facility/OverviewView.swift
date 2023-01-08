@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct OverviewView: View {
-    @State var facility: Facility
+    @StateObject var facility: Facility
     @State private var controls: FacilityControls
     
     init(facility: Facility) {
-        self.facility = facility
+        _facility = StateObject(wrappedValue: facility)
         self.controls = facility.controls!
     }
     
@@ -40,12 +40,12 @@ struct OverviewView: View {
             .modifier(Border(padding: 0))
             
             HStack {
-                Text("Crew: 0")
+                Text("Crew: \(facility.members?.count ?? 1)")
                     .modifier(AppText(type: TextType.smallBody))
                 
                 Spacer()
                 
-                AssignCrewButton()
+                AssignCrewButton(facility: self.facility)
             }
             .padding([.top], 12)
             

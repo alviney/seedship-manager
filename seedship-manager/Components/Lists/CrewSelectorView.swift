@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct CrewSelectorView: View {
-    @FetchRequest(sortDescriptors: []) var members: FetchedResults<CrewMember>
-    @State private var selectedMember: CrewMember? = nil
+    var predicate: NSPredicate?
+    var onSelectMember: ((CrewMember) -> Void)?
+    
+    @FetchRequest var members: FetchedResults<CrewMember>
+    
+    init(onSelectMember: ((CrewMember) -> Void)? = nil, predicate: NSPredicate? = nil) {
+        self._members = FetchRequest(entity: CrewMember.entity(), sortDescriptors: [], predicate: predicate)
+        self.onSelectMember = onSelectMember
+    }
     
     var body: some View {
         ZStack {
@@ -18,14 +25,11 @@ struct CrewSelectorView: View {
             VStack {
                 List (members) { member in
                     Button {
-                        self.selectedMember = member
+                        self.onSelectMember?(member)
                     } label: {
                         CrewMemberItem(member: member)
                     }
                     .modifier(ListItemPlain())
-                }
-                .sheet(item: $selectedMember) { member in
-                    CrewMemberView(member: member)
                 }
                 .modifier(ListPlain())
             }

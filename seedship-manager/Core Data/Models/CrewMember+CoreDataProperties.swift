@@ -20,7 +20,7 @@ extension CrewMember {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var weight: Int16
-    @NSManaged public var room: Facility?
+    @NSManaged public var facility: Facility?
 
 }
 

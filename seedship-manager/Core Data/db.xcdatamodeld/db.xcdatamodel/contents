@@ -5,13 +5,13 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Facility" inverseName="members" inverseEntity="Facility"/>
+        <relationship name="facility" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Facility" inverseName="members" inverseEntity="Facility"/>
     </entity>
     <entity name="Facility" representedClassName="Facility" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="controls" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FacilityControls" inverseName="facility" inverseEntity="FacilityControls"/>
-        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CrewMember" inverseName="room" inverseEntity="CrewMember"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CrewMember" inverseName="facility" inverseEntity="CrewMember"/>
     </entity>
     <entity name="FacilityControls" representedClassName="FacilityControls" syncable="YES" codeGenerationType="class">
         <attribute name="lifeSupportOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>

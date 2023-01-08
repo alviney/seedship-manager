@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CrewMemberItem: View {
-    @State var member: CrewMember
+    @ObservedObject var member: CrewMember
     
     var body: some View {
         ZStack {
@@ -33,7 +33,7 @@ struct CrewMemberItem: View {
                 }
                 .frame(maxWidth: .infinity)
                 
-                Text("In Cryo Chamber")
+                Text("In \(member.facility?.name ?? "corridors")")
                     .modifier(AppText(type: TextType.extraSmallBodyAlt))
             }
             .padding(12)

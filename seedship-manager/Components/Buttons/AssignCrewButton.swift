@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AssignCrewButton: View {
+    @State var facility: Facility
     @State var showingSheet = false
     
     var body: some View {
@@ -18,13 +19,24 @@ struct AssignCrewButton: View {
                 .modifier(AppText(type: TextType.smallBody))
         }
         .sheet(isPresented: $showingSheet) {
-            CrewSelectorView()
+            let inFacilityPredicate = NSPredicate(format: "facility = %@", facility)
+            CrewSelectorView(onSelectMember: self.removeMember, predicate: inFacilityPredicate)
+            let predicate = NSPredicate(format: "facility == nil")
+            CrewSelectorView(onSelectMember: self.addMember, predicate: predicate)
         }
     }
-}
-
-struct AssignCrewButton_Previews: PreviewProvider {
-    static var previews: some View {
-        AssignCrewButton()
+    
+    func addMember(member: CrewMember) {
+        facility.addToMembers(member)
+    }
+    
+    func removeMember(member: CrewMember) {
+        facility.removeFromMembers(member)
     }
 }
+//
+//struct AssignCrewButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AssignCrewButton()
+//    }
+//}

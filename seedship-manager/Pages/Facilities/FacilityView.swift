@@ -32,6 +32,8 @@ struct FacilityView: View {
                 HStack {
                     Text(facility.name ?? "Room")
                         .modifier(AppText(type: TextType.mediumTitle))
+                        .fixedSize()
+                    HorizontalDivider(color: Color(CustomColor.BorderDefault.rawValue))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 

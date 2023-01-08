@@ -8,11 +8,14 @@
 import SwiftUI
 import CoreData
 
-func seedCrewMembers(moc: NSManagedObjectContext) {
+@discardableResult  func seedCrewMembers(moc: NSManagedObjectContext) -> [CrewMember] {
     let names = ["Nero Ren", "Alex Sol", "Vera Teller"]
+    var members: [CrewMember] = []
     for name in names {
-        seedCrewMember(moc: moc, name: name)
+        members.append(seedCrewMember(moc: moc, name: name))
     }
+    
+    return members
 }
 
 @discardableResult func seedCrewMember(moc: NSManagedObjectContext, name: String) -> CrewMember {
