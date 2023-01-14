@@ -18,7 +18,7 @@ struct FacilitiesView: View {
                 VStack() {
                     ForEach (facilities) { facility in
                         NavigationButton(title: facility.name!) {
-                            FacilityView(facility: facility)
+                            AnyView(facility.view())
                         }.padding(4)
                     }
                 }

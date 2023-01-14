@@ -27,7 +27,7 @@ struct OverviewView: View {
             }
             .padding(24)
             .background (
-                Image(CustomImage.BioFarm.rawValue)
+                facility.backgroundImage()
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(maxWidth: .infinity)

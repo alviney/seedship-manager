@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2AC137296DE1C8004D8A87 /* Facilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC136296DE1C8004D8A87 /* Facilities.swift */; };
+		FA2AC1402970F06C004D8A87 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC13F2970F06C004D8A87 /* Command.swift */; };
+		FA2AC1422970FF79004D8A87 /* Commander.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1412970FF79004D8A87 /* Commander.swift */; };
+		FA2AC14729716106004D8A87 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC14629716106004D8A87 /* Executor.swift */; };
+		FA2AC14A2972AA30004D8A87 /* Command+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1482972AA30004D8A87 /* Command+CoreDataClass.swift */; };
+		FA2AC14B2972AA30004D8A87 /* Command+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1492972AA30004D8A87 /* Command+CoreDataProperties.swift */; };
+		FA7D6FE2296B6E9600F594FE /* CryoChamberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D6FE1296B6E9600F594FE /* CryoChamberView.swift */; };
+		FA7D6FEC296BBC6700F594FE /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D6FEB296BBC6700F594FE /* GameManager.swift */; };
 		FA8BC1652956D9A800965337 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BC1642956D9A800965337 /* TasksView.swift */; };
 		FA8BC1682956FF2600965337 /* CrewMember+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BC1662956FF2600965337 /* CrewMember+CoreDataClass.swift */; };
 		FA8BC1692956FF2600965337 /* CrewMember+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BC1672956FF2600965337 /* CrewMember+CoreDataProperties.swift */; };
@@ -67,6 +75,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA2AC136296DE1C8004D8A87 /* Facilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facilities.swift; sourceTree = "<group>"; };
+		FA2AC13F2970F06C004D8A87 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		FA2AC1412970FF79004D8A87 /* Commander.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commander.swift; sourceTree = "<group>"; };
+		FA2AC14629716106004D8A87 /* Executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executor.swift; sourceTree = "<group>"; };
+		FA2AC1482972AA30004D8A87 /* Command+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FA2AC1492972AA30004D8A87 /* Command+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FA7D6FE1296B6E9600F594FE /* CryoChamberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryoChamberView.swift; sourceTree = "<group>"; };
+		FA7D6FEB296BBC6700F594FE /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		FA8BC1642956D9A800965337 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		FA8BC1662956FF2600965337 /* CrewMember+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CrewMember+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA8BC1672956FF2600965337 /* CrewMember+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CrewMember+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -138,6 +154,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA2AC13C2970E93B004D8A87 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				FA2AC14329716097004D8A87 /* Executors */,
+				FA2AC13F2970F06C004D8A87 /* Command.swift */,
+				FA2AC1412970FF79004D8A87 /* Commander.swift */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		FA2AC14329716097004D8A87 /* Executors */ = {
+			isa = PBXGroup;
+			children = (
+				FA2AC14629716106004D8A87 /* Executor.swift */,
+			);
+			path = Executors;
+			sourceTree = "<group>";
+		};
+		FA7D6FE7296B997B00F594FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA2AC136296DE1C8004D8A87 /* Facilities.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FA8BC1632956D94200965337 /* Facility */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,12 +198,12 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		FA8DF2172951C0700074833D /* Seeds */ = {
+		FA8DF2172951C0700074833D /* Seed */ = {
 			isa = PBXGroup;
 			children = (
 				FA8DF2182951C0880074833D /* Seeder.swift */,
 			);
-			path = Seeds;
+			path = Seed;
 			sourceTree = "<group>";
 		};
 		FA8DF22C2953ABE10074833D /* Icons */ = {
@@ -177,6 +219,7 @@
 			children = (
 				FA8DF22029523BED0074833D /* BioFarmView.swift */,
 				FA8DF2372955AD0C0074833D /* FacilityView.swift */,
+				FA7D6FE1296B6E9600F594FE /* CryoChamberView.swift */,
 			);
 			path = Facilities;
 			sourceTree = "<group>";
@@ -206,7 +249,8 @@
 			children = (
 				FAA40BC5294D1B3D00FF153B /* Info.plist */,
 				FAA40BC2294D194800FF153B /* Fonts */,
-				FAA40BB3294C6EBE00FF153B /* Core Data */,
+				FAA40BB3294C6EBE00FF153B /* Data Management */,
+				FAA40BB9294C6F8200FF153B /* PersistenceController.swift */,
 				FAA40BC6294D946300FF153B /* View Modifiers */,
 				FAA40BBE294D08C300FF153B /* Components */,
 				FAA40BBF294D08CA00FF153B /* Pages */,
@@ -243,15 +287,17 @@
 			path = "seedship-managerUITests";
 			sourceTree = "<group>";
 		};
-		FAA40BB3294C6EBE00FF153B /* Core Data */ = {
+		FAA40BB3294C6EBE00FF153B /* Data Management */ = {
 			isa = PBXGroup;
 			children = (
-				FA8DF2172951C0700074833D /* Seeds */,
-				FAA40BE0294FFC0F00FF153B /* Models */,
-				FAA40BB9294C6F8200FF153B /* PersistenceController.swift */,
+				FA8DF2172951C0700074833D /* Seed */,
+				FAA40BE0294FFC0F00FF153B /* Database Model */,
+				FA7D6FE7296B997B00F594FE /* Model */,
+				FA2AC13C2970E93B004D8A87 /* Command */,
+				FA7D6FEB296BBC6700F594FE /* GameManager.swift */,
 				FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */,
 			);
-			path = "Core Data";
+			path = "Data Management";
 			sourceTree = "<group>";
 		};
 		FAA40BBE294D08C300FF153B /* Components */ = {
@@ -329,15 +375,17 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		FAA40BE0294FFC0F00FF153B /* Models */ = {
+		FAA40BE0294FFC0F00FF153B /* Database Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA2AC1482972AA30004D8A87 /* Command+CoreDataClass.swift */,
+				FA2AC1492972AA30004D8A87 /* Command+CoreDataProperties.swift */,
 				FA8BC1662956FF2600965337 /* CrewMember+CoreDataClass.swift */,
 				FA8BC1672956FF2600965337 /* CrewMember+CoreDataProperties.swift */,
 				FA8DF21C29523B910074833D /* Facility+CoreDataClass.swift */,
 				FA8BC16A2956FF6800965337 /* Facility+CoreDataProperties.swift */,
 			);
-			path = Models;
+			path = "Database Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +523,7 @@
 				FAA40BD0294E553900FF153B /* StackModifiers.swift in Sources */,
 				FA8BC16F2959303F00965337 /* CrewSelectorView.swift in Sources */,
 				FAA40B8C294C6DF600FF153B /* ContentView.swift in Sources */,
+				FA2AC1402970F06C004D8A87 /* Command.swift in Sources */,
 				FA8DF2332953BB400074833D /* ManualView.swift in Sources */,
 				FAA40BDB294F29A600FF153B /* SubheaderTechnical.swift in Sources */,
 				FA8DF22E2953ABF70074833D /* Icon.swift in Sources */,
@@ -482,13 +531,17 @@
 				FAA40BC8294D94A300FF153B /* TextModifiers.swift in Sources */,
 				FAA40BD7294F207100FF153B /* CrewDatabaseView.swift in Sources */,
 				FAA40BD5294E6F5B00FF153B /* HeaderTechnical.swift in Sources */,
+				FA7D6FE2296B6E9600F594FE /* CryoChamberView.swift in Sources */,
 				FAA40BDD294FB0AE00FF153B /* HomeView.swift in Sources */,
 				FA8BC16B2956FF6800965337 /* Facility+CoreDataProperties.swift in Sources */,
 				FA8DF2162951B6040074833D /* NavigationButton.swift in Sources */,
 				FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */,
+				FA2AC137296DE1C8004D8A87 /* Facilities.swift in Sources */,
 				FA8DF22729530B050074833D /* SideBar.swift in Sources */,
+				FA2AC1422970FF79004D8A87 /* Commander.swift in Sources */,
 				FAA40BCA294D95CE00FF153B /* Constants.swift in Sources */,
 				FA8DF2192951C0880074833D /* Seeder.swift in Sources */,
+				FA2AC14B2972AA30004D8A87 /* Command+CoreDataProperties.swift in Sources */,
 				FA8DF22129523BED0074833D /* BioFarmView.swift in Sources */,
 				FA8BC16D2957001F00965337 /* OverviewView.swift in Sources */,
 				FA8DF2382955AD0C0074833D /* FacilityView.swift in Sources */,
@@ -496,11 +549,14 @@
 				FA8DF229295320500074833D /* NavigationModifiers.swift in Sources */,
 				FA8DF21E29523B910074833D /* Facility+CoreDataClass.swift in Sources */,
 				FA8DF22B2953A5520074833D /* HubView.swift in Sources */,
+				FA2AC14A2972AA30004D8A87 /* Command+CoreDataClass.swift in Sources */,
 				FA8BC171295930BB00965337 /* AssignCrewButton.swift in Sources */,
 				FA8BC1682956FF2600965337 /* CrewMember+CoreDataClass.swift in Sources */,
 				FAA40B8A294C6DF600FF153B /* seedship_managerApp.swift in Sources */,
+				FA2AC14729716106004D8A87 /* Executor.swift in Sources */,
 				FA8DF21B2952369A0074833D /* FacilitiesView.swift in Sources */,
 				FAA40BBA294C6F8200FF153B /* PersistenceController.swift in Sources */,
+				FA7D6FEC296BBC6700F594FE /* GameManager.swift in Sources */,
 				FAA40BCE294DE21300FF153B /* CrewMemberItem.swift in Sources */,
 				FAA40BD9294F272000FF153B /* HorizontalDivider.swift in Sources */,
 				FA8BC1652956D9A800965337 /* TasksView.swift in Sources */,

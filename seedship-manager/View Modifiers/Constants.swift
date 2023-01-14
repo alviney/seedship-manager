@@ -32,4 +32,6 @@ enum CustomColor: String {
 enum CustomImage: String {
     case HomeHero = "ImageSpaceship01"
     case BioFarm = "ImageBioFarm"
+    case CryoChamber = "ImageCryoDoor"
+    case EngineRoom = "ImageEngineRoom"
 }

@@ -12,13 +12,13 @@ struct FacilityView: View {
     @State private var controls: FacilityControls
     @State private var navIndex = 0
     @State private var lifeSupportIsOn = false
-    @State private var image: Image?
+    @State private var image: String
     
     
-    init(facility: Facility, image: String = "") {
+    init(facility: Facility, image: String) {
         self.facility = facility
         self.controls = facility.controls!
-        self.image = Image(image)
+        self.image = image
         
         UISegmentedControl.appearance()
             .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Aldrich", size: 14.0)!], for: .normal)
@@ -55,6 +55,7 @@ struct FacilityView: View {
                 .padding(1)            
                 .tabViewStyle(PageTabViewStyle())
             }
+//            .background(Image(image))
             .padding(24)
         }
         .modifier(Nav(title: "Facility"))
@@ -64,7 +65,8 @@ struct FacilityView: View {
 struct FacilityView_Previews: PreviewProvider {
     static var previews: some View {
         let facility = seedFacility(moc: PersistenceController.preview.container.viewContext, name: "Facility")
-        FacilityView(facility: facility)
+        AnyView(facility.view())
+//        FacilityView(facility: facility)
         
     }
 }

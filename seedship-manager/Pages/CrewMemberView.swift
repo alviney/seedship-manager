@@ -32,6 +32,11 @@ struct CrewMemberView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .modifier(Border(borderColor: BorderColor.secondary))
             Spacer()
+            Button {
+                FacilityCommand.Wake.createFor(member: member, facility: member.facility!)
+            } label: {
+                Text("Wake Up")
+            }
         }
         .font(Font.custom("Aldrich", size: 12))
         .padding(24)

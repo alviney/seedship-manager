@@ -21,17 +21,17 @@ struct AssignCrewButton: View {
         .sheet(isPresented: $showingSheet) {
             let inFacilityPredicate = NSPredicate(format: "facility = %@", facility)
             CrewSelectorView(onSelectMember: self.removeMember, predicate: inFacilityPredicate)
-            let predicate = NSPredicate(format: "facility == nil")
+            let predicate = NSPredicate(format: "facility != %@", facility)
             CrewSelectorView(onSelectMember: self.addMember, predicate: predicate)
         }
     }
     
     func addMember(member: CrewMember) {
-        facility.addToMembers(member)
+        FacilityCommand.Assign.createFor(member: member, facility: facility)
     }
     
     func removeMember(member: CrewMember) {
-        facility.removeFromMembers(member)
+        FacilityCommand.UnAssign.createFor(member: member, facility: facility)        
     }
 }
 //

@@ -13,10 +13,12 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) var members: FetchedResults<CrewMember>
     
     func loadData() {
+//        PersistenceController.shared.clearDatabase()
         if (members.count == 0) {
-            seedFacilities(moc: moc)
-            seedCrewMembers(moc: moc)            
+            seed(moc: moc)
         }
+        
+        GameManager()
     }
     
     var body: some View {
