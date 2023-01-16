@@ -12,13 +12,11 @@ struct FacilityView: View {
     @State private var controls: FacilityControls
     @State private var navIndex = 0
     @State private var lifeSupportIsOn = false
-    @State private var image: String
     
     
-    init(facility: Facility, image: String) {
+    init(facility: Facility) {
         self.facility = facility
         self.controls = facility.controls!
-        self.image = image
         
         UISegmentedControl.appearance()
             .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Aldrich", size: 14.0)!], for: .normal)
@@ -49,7 +47,7 @@ struct FacilityView: View {
                         content:  {
                     OverviewView(facility: facility).tag(0) 
                     TasksView(title: "Tasks").tag(1)
-                    TasksView(title: "Assets").tag(2)
+                    AssetsView().tag(2)
                     TasksView(title: "Inventory").tag(3)
                 })
                 .padding(1)            
@@ -62,11 +60,8 @@ struct FacilityView: View {
     }
 }
 
-struct FacilityView_Previews: PreviewProvider {
-    static var previews: some View {
-        let facility = seedFacility(moc: PersistenceController.preview.container.viewContext, name: "Facility")
-        AnyView(facility.view())
-//        FacilityView(facility: facility)
-        
-    }
-}
+//struct FacilityView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FacilityView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}

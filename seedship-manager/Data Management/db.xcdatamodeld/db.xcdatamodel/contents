@@ -5,10 +5,12 @@
         <attribute name="createdAt" optional="YES" attributeType="String"/>
         <relationship name="blueprint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AssetBlueprint"/>
         <relationship name="facility" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Facility" inverseName="assets" inverseEntity="Facility"/>
+        <relationship name="resources" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ResourceQuantity" inverseName="asset" inverseEntity="ResourceQuantity"/>
     </entity>
     <entity name="AssetBlueprint" representedClassName="AssetBlueprint" syncable="YES" codeGenerationType="class">
         <attribute name="code" optional="YES" attributeType="String"/>
         <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Command" representedClassName="Command" syncable="YES">
@@ -35,7 +37,7 @@
     <entity name="Facility" representedClassName="Facility" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="assets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="facility" inverseEntity="Asset"/>
+        <relationship name="assets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Asset" inverseName="facility" inverseEntity="Asset"/>
         <relationship name="commands" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Command" inverseName="facility" inverseEntity="Command"/>
         <relationship name="controls" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FacilityControls" inverseName="facility" inverseEntity="FacilityControls"/>
         <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CrewMember" inverseName="facility" inverseEntity="CrewMember"/>
@@ -52,10 +54,11 @@
     <entity name="Resource" representedClassName="Resource" syncable="YES" codeGenerationType="class">
         <attribute name="details" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="wpu" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="ResourceQuantity" representedClassName="ResourceQuantity" syncable="YES" codeGenerationType="class">
         <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="asset" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="resources" inverseEntity="Asset"/>
         <relationship name="resource" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Resource"/>
     </entity>
 </model>

@@ -46,7 +46,15 @@ struct CrewMemberView: View {
 
 struct CrewMemberView_Previews: PreviewProvider {
   static var previews: some View {
-      let member = seedCrewMember(moc: PersistenceController.preview.container.viewContext, name: "Test Name")
-      CrewMemberView(member: member)
+      CrewMemberView(member: createMember())
   }
+}
+
+func createMember() -> CrewMember {
+let member = CrewMember(context: PersistenceController.preview.viewContext)
+    member.name = "Alex Viney"
+    member.age = 43
+    member.weight = 88
+    member.id =  UUID()
+    return member
 }

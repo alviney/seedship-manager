@@ -15,9 +15,9 @@ public class Facility: NSManagedObject {
     
     public func view() -> some View {
         if let facilityEnum = Facilities(rawValue: self.name!) {
-            return facilityEnum.view(facility: self)
+            return facilityEnum.view()
         }
-        return AnyView(FacilityView(facility: self, image: CustomImage.BioFarm.rawValue))
+        return AnyView(FacilityView(facility: self))
     }
     
     public func backgroundImage() -> Image {

@@ -55,17 +55,16 @@ struct OverviewView: View {
     }
 }
 
-struct OverviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
-            
-            let facility = seedFacility(moc: PersistenceController.preview.container.viewContext, name: "Facility")
-            OverviewView(facility: facility)
-        }
-        
-    }
-}
+//struct OverviewView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ZStack {
+//            Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
+//            
+//            OverviewView()
+//        }
+//        
+//    }
+//}
 
 
 struct ToggleView: View {
