@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum CustomFont: String {
     case Technical = "Aldrich"
@@ -27,6 +28,12 @@ enum CustomColor: String {
     
     case BorderDefault = "ColorBorderDefault"
     case BorderSecondary = "ColorBorderSecondary"
+    
+    case Danger = "ColorDanger"
+    
+    var color: Color {
+        return Color(self.rawValue)
+    }
 }
 
 enum CustomImage: String {

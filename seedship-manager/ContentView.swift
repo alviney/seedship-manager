@@ -18,7 +18,7 @@ struct ContentView: View {
             seed(moc: moc)
         }
         
-        GameManager()
+        let _ = GameManager()
     }
     
     var body: some View {

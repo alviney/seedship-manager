@@ -15,7 +15,7 @@ struct CrewMemberView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(member.name ?? "Name")
-                        .modifier(AppText(type: TextType.mediumTitleAlt))
+                        .modifier(AppText(type: TextType.mediumTitleAlt()))
                     VStack (alignment: .leading, spacing: 4) {
                         Text("Age: 44")
                         Text("Absolute: 1278")

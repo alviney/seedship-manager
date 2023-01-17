@@ -18,7 +18,7 @@ struct TasksView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
                             Text(command.name ?? "Task")
-                                .modifier(AppText(type: TextType.mediumTitleAlt))
+                                .modifier(AppText(type: TextType.mediumTitleAlt()))
                             Spacer()
                             Text(command.queue?.member?.name ?? "Target")
                         }
@@ -41,7 +41,7 @@ struct TasksView: View {
             Spacer()
         }
         .font(Font.custom("Aldrich", size: 12))
-        .padding(24)
+        .padding(2)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
     

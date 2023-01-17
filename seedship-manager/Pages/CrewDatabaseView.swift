@@ -19,7 +19,7 @@ struct CrewDatabaseView: View {
                 VStack(spacing: 20) {
                     VStack {
                         Text("Connection: Live")
-                            .modifier(AppText(type: TextType.extraSmallBody))
+                            .modifier(AppText(type: TextType.extraSmallBody()))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding([.leading], 16)
                         

@@ -20,7 +20,7 @@ struct NavigationButton<Destination: View>: View {
         } label: {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .modifier(AppText(type: TextType.mediumTitle))
+                .modifier(AppText(type: TextType.mediumTitle()))
                 .modifier(BorderBlock())
         }
     }

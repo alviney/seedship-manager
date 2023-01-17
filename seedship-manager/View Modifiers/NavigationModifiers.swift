@@ -20,22 +20,23 @@ struct Nav: ViewModifier {
                 ToolbarItem(placement: .principal) {
                     HStack {
                         Text(title)
-                            .modifier(AppText(type: TextType.largeTitle))
+                            .modifier(AppText(type: TextType.mediumTitle()))
+//                        HorizontalDivider(color: Color(CustomColor.BorderDefault.rawValue))
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("")
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        self.showingSheet.toggle()
-                    } label: {
-                        Icon(name: "book.closed", size: 20)
-                    }
-                    .sheet(isPresented: $showingSheet) {
-                        ManualView()
-                    }
-                 }
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button {
+//                        self.showingSheet.toggle()
+//                    } label: {
+//                        Icon(name: "book.closed", size: 20)
+//                    }
+//                    .sheet(isPresented: $showingSheet) {
+//                        ManualView()
+//                    }
+//                 }
             }
     }
 }

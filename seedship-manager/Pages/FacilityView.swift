@@ -27,13 +27,13 @@ struct FacilityView: View {
             Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
             
             VStack (spacing: 20) {
-                HStack {
-                    Text(facility.name ?? "Room")
-                        .modifier(AppText(type: TextType.mediumTitle))
-                        .fixedSize()
-                    HorizontalDivider(color: Color(CustomColor.BorderDefault.rawValue))
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+//                HStack {
+//                    Text(facility.name ?? "Room")
+//                        .modifier(AppText(type: TextType.mediumTitle))
+//                        .fixedSize()
+//                    HorizontalDivider(color: Color(CustomColor.BorderDefault.rawValue))
+//                }
+//                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Picker("", selection: $navIndex) {
                     Text("Overview").tag(0)
@@ -47,16 +47,16 @@ struct FacilityView: View {
                         content:  {
                     OverviewView(facility: facility).tag(0) 
                     TasksView(title: "Tasks").tag(1)
-                    AssetsView().tag(2)
+                    AssetsView(assets: facility.assetsArray).tag(2)
                     TasksView(title: "Inventory").tag(3)
                 })
                 .padding(1)            
                 .tabViewStyle(PageTabViewStyle())
             }
 //            .background(Image(image))
-            .padding(24)
+            .padding([.leading, .trailing], 24)
         }
-        .modifier(Nav(title: "Facility"))
+        .modifier(Nav(title: facility.name ?? "Facility"))
     }
 }
 

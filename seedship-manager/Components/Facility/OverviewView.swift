@@ -41,7 +41,7 @@ struct OverviewView: View {
             
             HStack {
                 Text("Crew: \(facility.members?.count ?? 1)")
-                    .modifier(AppText(type: TextType.smallBody))
+                    .modifier(AppText(type: TextType.smallBody()))
                 
                 Spacer()
                 
@@ -74,7 +74,7 @@ struct ToggleView: View {
     var body: some View {
         Toggle(isOn: $isOn) {
             Text(title)
-                .modifier(AppText(type: TextType.mediumTitle))
+                .modifier(AppText(type: TextType.mediumTitle()))
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(6)

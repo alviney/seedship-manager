@@ -15,7 +15,7 @@ struct ManualView: View {
                 
                 VStack {
                     Text("Manual")
-                        .modifier(AppText(type: TextType.largeTitle))
+                        .modifier(AppText(type: TextType.largeTitle()))
                     
                     VStack {
                         Spacer()

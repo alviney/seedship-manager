@@ -15,14 +15,26 @@ struct FacilitiesView: View {
             ZStack {
                 Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
                                                                          
-                VStack() {
+                ScrollView() {
                     ForEach (facilities) { facility in
-                        NavigationButton(title: facility.name!) {
+                        NavigationLink {
                             AnyView(facility.view())
-                        }.padding(4)
+                        } label: {
+                            HStack {
+                                Text(facility.name ?? "Name")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                .modifier(AppText(type: TextType.mediumTitle()))
+                                
+                                Spacer()
+                                
+                                Text("Offline")
+                                    .modifier(AppText(type: TextType.smallBody(.Danger)))
+                            }
+                        }
+                        .padding(4)
                     }
                 }
-                .padding(24)
+                .padding([.leading, .trailing], 12)
                 .modifier(Nav(title: "Facilities"))
             }
         }.tint(Color.white)

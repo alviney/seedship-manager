@@ -3,6 +3,7 @@
     <entity name="Asset" representedClassName="Asset" syncable="YES" codeGenerationType="class">
         <attribute name="condition" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="serial" optional="YES" attributeType="String"/>
         <relationship name="blueprint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AssetBlueprint"/>
         <relationship name="facility" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Facility" inverseName="assets" inverseEntity="Facility"/>
         <relationship name="resources" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ResourceQuantity" inverseName="asset" inverseEntity="ResourceQuantity"/>

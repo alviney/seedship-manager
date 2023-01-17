@@ -20,6 +20,11 @@ public class Facility: NSManagedObject {
         return AnyView(FacilityView(facility: self))
     }
     
+    public var assetsArray: [Asset] {
+        let set = assets as? Set<Asset> ?? []
+        return Array(set)
+    }
+    
     public func backgroundImage() -> Image {
         Facilities(rawValue: self.name!)?.backgroundImage() ?? Image(CustomImage.BioFarm.rawValue)
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 enum Assets: String, CaseIterable {
     case SeedBank = "Seed Bank"
@@ -40,6 +41,13 @@ enum Assets: String, CaseIterable {
         switch self {
             case .SeedBank:
             return "v1"
+        }
+    }
+    
+    public func view(asset: Asset) -> AnyView {
+        switch self {
+        case .SeedBank:
+            return AnyView(AssetSeedBank(asset: asset))
         }
     }
     

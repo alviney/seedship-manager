@@ -9,19 +9,24 @@ import Foundation
 import SwiftUI
 
 enum TextType {
-    case largeTitle
-    case mediumTitle
-    case smallTitle
+    enum Colour {
+        case Default
+        case Danger
+    }
     
-    case largeTitleAlt
-    case mediumTitleAlt
-    case smallTitleAlt
+    case largeTitle(Colour = Colour.Default)
+    case mediumTitle(Colour = Colour.Default)
+    case smallTitle(Colour = Colour.Default)
     
-    case smallBody
-    case extraSmallBody
+    case largeTitleAlt(Colour = Colour.Default)
+    case mediumTitleAlt(Colour = Colour.Default)
+    case smallTitleAlt(Colour = Colour.Default)
     
-    case smallBodyAlt
-    case extraSmallBodyAlt
+    case smallBody(Colour = Colour.Default)
+    case extraSmallBody(Colour = Colour.Default)
+    
+    case smallBodyAlt(Colour = Colour.Default)
+    case extraSmallBodyAlt(Colour = Colour.Default)
     
     func getFont() -> Font? {
         return Font.custom(CustomFont.Technical.rawValue, size: size)
@@ -38,16 +43,22 @@ enum TextType {
     }
     
     func getColor() -> Color {
-        var color: String = CustomColor.TitleFont.rawValue
+        var color: Color = CustomColor.TitleFont.color
+        
         
         switch self {
-        case .largeTitle, .mediumTitle, .smallTitle, .smallBody, .extraSmallBody:
-            color = CustomColor.TitleFont.rawValue
+        case let .largeTitle(c), let .mediumTitle(c), let .smallTitle(c), let .smallBody(c), let .extraSmallBody(c):
+            switch c {
+            case .Danger:
+                color = CustomColor.Danger.color
+            default:
+                color = CustomColor.TitleFont.color
+            }
         default:
-            color = CustomColor.TitleAltFont.rawValue
+            color = CustomColor.TitleAltFont.color
         }
         
-        return Color(color)
+        return color
     }
     
     func getCase() -> Text.Case? {
@@ -61,7 +72,7 @@ enum TextType {
 }
 
 struct AppText: ViewModifier {
-    @State var type: TextType = TextType.smallBody
+    @State var type: TextType = TextType.smallBody()
     
     func body(content: Content) -> some View {
         content
