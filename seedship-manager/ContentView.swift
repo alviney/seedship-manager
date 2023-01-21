@@ -24,8 +24,8 @@ struct ContentView: View {
     var body: some View {
         HomeView()
             .onAppear(perform: loadData)
+            .modifier(CFont())
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

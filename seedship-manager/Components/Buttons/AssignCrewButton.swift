@@ -16,7 +16,6 @@ struct AssignCrewButton: View {
             self.showingSheet.toggle()
         } label: {
             Text("Assign Crew Member")
-                .modifier(AppText(type: TextType.smallBody()))
         }
         .sheet(isPresented: $showingSheet) {
             let inFacilityPredicate = NSPredicate(format: "facility = %@", facility)

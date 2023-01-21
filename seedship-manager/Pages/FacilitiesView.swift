@@ -13,31 +13,43 @@ struct FacilitiesView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
-                                                                         
-                ScrollView() {
-                    ForEach (facilities) { facility in
-                        NavigationLink {
-                            AnyView(facility.view())
-                        } label: {
+//                CustomColor.BackgroundFacility.color.ignoresSafeArea()
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 12) {
+                        ForEach (facilities) { facility in
                             HStack {
-                                Text(facility.name ?? "Name")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                .modifier(AppText(type: TextType.mediumTitle()))
-                                
-                                Spacer()
-                                
+                                HorizontalDivider()
                                 Text("Offline")
-                                    .modifier(AppText(type: TextType.smallBody(.Danger)))
+                                HorizontalDivider()
                             }
+                            
+                            NavigationLink {
+                                AnyView(facility.view())
+                            } label: {
+                                HStack {
+                                    Text(facility.name ?? "Name")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    
+                                    Spacer()
+                                    
+                                    Text("Offline")
+                                        .padding([.trailing], 24)
+                                    
+                                    Icon(name: "chevron.right", size: 12, theme: Theme.Beta)
+                                }
+                            }
+                            .padding(4)
+                            .modifier(Border())
+                            .padding(2)
                         }
-                        .padding(4)
                     }
                 }
-                .padding([.leading, .trailing], 12)
-                .modifier(Nav(title: "Facilities"))
             }
-        }.tint(Color.white)
+            .modifier(Nav(title: "Facilities"))
+            .padding(12)
+        }
+        .foregroundColor(Theme.Beta.text)
+        .tint(Theme.Alpha.navigation)
     }
 }
 

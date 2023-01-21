@@ -15,7 +15,6 @@ struct CrewMemberView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(member.name ?? "Name")
-                        .modifier(AppText(type: TextType.mediumTitleAlt()))
                     VStack (alignment: .leading, spacing: 4) {
                         Text("Age: 44")
                         Text("Absolute: 1278")
@@ -26,11 +25,9 @@ struct CrewMemberView: View {
                 Spacer()
                 Image(systemName: "person")
                     .font(.largeTitle)
-
-                
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .modifier(Border(borderColor: BorderColor.secondary))
+            .modifier(Border())
             Spacer()
             Button {
                 FacilityCommand.Wake.createFor(member: member, facility: member.facility!)
@@ -38,7 +35,7 @@ struct CrewMemberView: View {
                 Text("Wake Up")
             }
         }
-        .font(Font.custom("Aldrich", size: 12))
+        .font(Font.custom(CustomFont.Technical.rawValue, size: 12))
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }

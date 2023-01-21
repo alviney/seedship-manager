@@ -11,31 +11,42 @@ struct HubView: View {
     @Binding var isDisclosed: Bool
     @State var showingSheet: Bool = false
     @State var navIndex = 0
+    @State var frameRate = 1.0
     
     var body: some View {
-        NavigationStack {
             ZStack {
-                Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
+                Theme.Alpha.color.ignoresSafeArea()
                 
                 HStack {
                     if isDisclosed {
                         VStack {
-                            HStack {
-                                Picker("", selection: $navIndex) {
-                                   Text("Messages").tag(0)
-                                   Text("Status").tag(1)
-                                   Text("Navigation").tag(2)
-                               }
-                               .pickerStyle(.segmented)
+                            VStack {
+                                HStack {
+                                    Picker("", selection: $navIndex) {
+                                       Text("Messages").tag(0)
+                                       Text("Status").tag(1)
+                                       Text("Navigation").tag(2)
+                                   }
+                                   .pickerStyle(.segmented)
+                                   .tabViewStyle(PageTabViewStyle())
+                                }
+                                                      
+                               TabView(selection: $navIndex,
+                                       content:  {
+                                   TasksView()
+                                       .tag(0)
+                               })
                                .tabViewStyle(PageTabViewStyle())
                             }
-                                                  
-                           TabView(selection: $navIndex,
-                                   content:  {
-                               
-                           })
-                           .tabViewStyle(PageTabViewStyle())
-                           .modifier(Border())
+                            .modifier(Border())
+                            
+                            HStack {
+                                Icon(name: "clock")
+                                Slider(value: $frameRate, in: 0.1...100)
+                                Text("\(frameRate, specifier: "%.2f")")
+                                
+                            }
+                            .padding([.top], 8)
                         }
                     } else {
                         Spacer()
@@ -69,8 +80,7 @@ struct HubView: View {
                 .frame(alignment: .trailing)
                 .padding(12)
             }
-        }
-        .frame(height: isDisclosed ? 200 : 50, alignment: .top)
+        .frame(height: isDisclosed ? 300 : 50, alignment: .top)
                   .clipped()
     }
     

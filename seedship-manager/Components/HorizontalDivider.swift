@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HorizontalDivider: View {
     @State var height: CGFloat = 2
-    @State var color: Color = Color.black;
+    @State var color: Color = Theme.Alpha.accent;
     
     var body: some View {
         Text("")

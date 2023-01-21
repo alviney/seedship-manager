@@ -20,7 +20,7 @@ struct CrewSelectorView: View {
     
     var body: some View {
         ZStack {
-            Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
+//            Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
             
             VStack {
                 List (members) { member in

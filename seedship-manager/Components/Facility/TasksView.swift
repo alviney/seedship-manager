@@ -18,7 +18,6 @@ struct TasksView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
                             Text(command.name ?? "Task")
-                                .modifier(AppText(type: TextType.mediumTitleAlt()))
                             Spacer()
                             Text(command.queue?.member?.name ?? "Target")
                         }
@@ -36,11 +35,11 @@ struct TasksView: View {
                         .font(.largeTitle)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .modifier(Border(borderColor: BorderColor.secondary))
+                .modifier(Border())
             }
             Spacer()
         }
-        .font(Font.custom("Aldrich", size: 12))
+        .font(Font.custom(CustomFont.Technical.rawValue, size: 12))
         .padding(2)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }

@@ -19,21 +19,34 @@ struct FacilityView: View {
         self.controls = facility.controls!
         
         UISegmentedControl.appearance()
-            .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Aldrich", size: 14.0)!], for: .normal)
+            .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: CustomFont.Technical.rawValue, size: 14.0)!], for: .normal)
     }
     
     var body: some View {
         ZStack {
-            Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
+//            CustomColor.BackgroundFacility.color.ignoresSafeArea()
             
             VStack (spacing: 20) {
-//                HStack {
-//                    Text(facility.name ?? "Room")
-//                        .modifier(AppText(type: TextType.mediumTitle))
-//                        .fixedSize()
-//                    HorizontalDivider(color: Color(CustomColor.BorderDefault.rawValue))
-//                }
-//                .frame(maxWidth: .infinity, alignment: .leading)
+                VStack {
+                    ToggleView(title: "Life Support", isOn: Binding(projectedValue: $controls.lifeSupportOn))
+                    HorizontalDivider(color: Color.white)
+                    ToggleView(title: "Power", isOn: Binding(projectedValue: $controls.powerOn))
+                    HorizontalDivider(color: Color.white)
+                    ToggleView(title: "Water", isOn: Binding(projectedValue: $controls.waterOn))
+                }
+                .padding(24)
+                .background (
+                    facility.backgroundImage()
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.black)
+                        .opacity(0.4)
+                        .allowsHitTesting(false)
+                )
+                .frame(height: 200)
+                .cornerRadius(12)
+                .modifier(Border(padding: 0))
                 
                 Picker("", selection: $navIndex) {
                     Text("Overview").tag(0)
@@ -53,10 +66,9 @@ struct FacilityView: View {
                 .padding(1)            
                 .tabViewStyle(PageTabViewStyle())
             }
-//            .background(Image(image))
-            .padding([.leading, .trailing], 24)
         }
         .modifier(Nav(title: facility.name ?? "Facility"))
+//        .padding(12)
     }
 }
 

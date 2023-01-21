@@ -18,30 +18,29 @@ struct OverviewView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                ToggleView(title: "Life Support", isOn: Binding(projectedValue: $controls.lifeSupportOn))
-                HorizontalDivider(color: Color.white)
-                ToggleView(title: "Power", isOn: Binding(projectedValue: $controls.powerOn))
-                HorizontalDivider(color: Color.white)
-                ToggleView(title: "Water", isOn: Binding(projectedValue: $controls.waterOn))
-            }
-            .padding(24)
-            .background (
-                facility.backgroundImage()
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.black)
-                    .opacity(0.4)
-                    .allowsHitTesting(false)
-            )
-            .frame(height: 200)
-            .cornerRadius(12)
-            .modifier(Border(padding: 0))
+//            VStack {
+//                ToggleView(title: "Life Support", isOn: Binding(projectedValue: $controls.lifeSupportOn))
+//                HorizontalDivider(color: Color.white)
+//                ToggleView(title: "Power", isOn: Binding(projectedValue: $controls.powerOn))
+//                HorizontalDivider(color: Color.white)
+//                ToggleView(title: "Water", isOn: Binding(projectedValue: $controls.waterOn))
+//            }
+//            .padding(24)
+//            .background (
+//                facility.backgroundImage()
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(maxWidth: .infinity)
+//                    .background(Color.black)
+//                    .opacity(0.4)
+//                    .allowsHitTesting(false)
+//            )
+//            .frame(height: 200)
+//            .cornerRadius(12)
+//            .modifier(Border(padding: 0))
             
             HStack {
                 Text("Crew: \(facility.members?.count ?? 1)")
-                    .modifier(AppText(type: TextType.smallBody()))
                 
                 Spacer()
                 
@@ -74,10 +73,9 @@ struct ToggleView: View {
     var body: some View {
         Toggle(isOn: $isOn) {
             Text(title)
-                .modifier(AppText(type: TextType.mediumTitle()))
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(6)
-        .tint(Color(CustomColor.ActiveAccent.rawValue))
+        .tint(Theme.Alpha.accentActive)
     }
 }

@@ -11,11 +11,10 @@ struct ManualView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(CustomColor.ManualViewBackground.rawValue).ignoresSafeArea()
+                Theme.Manual.color.ignoresSafeArea()
                 
                 VStack {
                     Text("Manual")
-                        .modifier(AppText(type: TextType.largeTitle()))
                     
                     VStack {
                         Spacer()

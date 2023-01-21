@@ -24,27 +24,23 @@ struct CrewMemberItem: View {
                     HStack {
                         Text("Age: " + String(member.age))
                             .fixedSize()
-                            .modifier(AppText(type: TextType.extraSmallBodyAlt()))
                         Text("Weight: \(member.weight)kg")
                             .fixedSize()
-                            .modifier(AppText(type: TextType.extraSmallBodyAlt()))
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 .frame(maxWidth: .infinity)
                 
                 Text("In \(member.facility?.name ?? "corridors")")
-                    .modifier(AppText(type: TextType.extraSmallBodyAlt()))
             }
             .padding(12)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color(CustomColor.BorderSecondary.rawValue), lineWidth: 2)
+                    .stroke(Theme.Alpha.border, lineWidth: 2)
             )
         }
         .padding(2)
         .frame(maxWidth: .infinity)
-        .modifier(AppText(type: TextType.smallBodyAlt()))
     }
 //
 //    struct CrewMemberItem_Previews: PreviewProvider {

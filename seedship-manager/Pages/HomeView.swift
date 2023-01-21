@@ -13,45 +13,49 @@ struct HomeView: View {
     @State private var isDisclosed = true
     
     init() {
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.init(name: "Aldrich", size: 16)! ], for: .normal)
+        print("init")
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.init(name: CustomFont.Technical.rawValue, size: 16)! ], for: .normal)
         
         UIBarButtonItem.appearance()
-             .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Aldrich", size: 14.0)!], for: .normal)
-
-//        UITabBar.appearance().backgroundColor = UIColor(Color(CustomColor.TabViewBackground.rawValue))
+            .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: CustomFont.Technical.rawValue, size: 14.0)!], for: .normal)
     }
     
     var body: some View {
         ZStack {
-            Color(CustomColor.DefaultBackground.rawValue).ignoresSafeArea()
+            Theme.Alpha.color.ignoresSafeArea()
             
             VStack (spacing: 0){
                 HubView(isDisclosed: $isDisclosed)
                 
-                HorizontalDivider()
+                HorizontalDivider(height: 4)
                 
-                TabView(selection: $selection) {
+                if selection == 0 {
                     CrewDatabaseView()
-                        .tabItem {
-                            Text("Crew").modifier(AppText(type: TextType.smallTitle()))
-                            Icon(name: "person.3.fill")
-                        }
-                        .tag(0)
-    //                HubView()
-    //                    .tabItem {
-    //                        Text("Hub").modifier(AppText(type: TextType.smallTitle))
-    //                        Icon(name: "tv.inset.filled")
-    //                    }
-    //                    .tag(1)
-                    FacilitiesView()
-                        .tabItem {
-                            Text("Rooms").modifier(AppText(type: TextType.smallTitle()))
-                            Icon(name: "door.left.hand.open", size: 8)
-                        }
-                        .tag(1)
                 }
-                .tint(Color.white)
-//                .background(Image(CustomImage.HomeHero.rawValue))
+                else if selection == 1 {
+                    OpsView()
+                } else {
+                    FacilitiesView()
+                }
+                
+                VStack {
+                    HorizontalDivider(height: 4)
+                    HStack  {
+                        TabButton(selection: $selection, index: 0, icon: "person.3.fill", title: "Crew")
+                        Spacer()
+                        TabButton(selection: $selection, index: 1, icon: "tv.inset.filled", title: "Ops")
+                        Spacer()
+                        TabButton(selection: $selection, index: 2, icon: "door.left.hand.open", title: "Facs")
+                    }
+                    .padding([.top], 24)
+                    .padding([.leading, .trailing], 48)
+                    .frame(maxWidth: .infinity)
+                    .onChange(of: selection, perform: { index in
+                        withAnimation {
+                            isDisclosed = index ==  1
+                        }
+                    })
+                }
             }
         }
     }
@@ -59,6 +63,37 @@ struct HomeView: View {
     struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
             HomeView()
+        }
+    }
+    
+    struct TabButton : View {
+        @Binding var selection: Int
+        public var index: Int
+        public var icon: String
+        public var title: String?
+        @State private var isSelected: Bool = false
+        @State var color = Theme.Alpha.icon
+        
+        var body: some View {
+            Button {
+                selection = index
+            } label: {
+                VStack (spacing: 8) {
+                    Icon(name: icon, active: $isSelected)
+                    if let str = title {
+                        Text(str)
+                            .modifier(CFont(textStyle: .caption, color: $color))
+                            
+                    }
+                }
+            }
+            .onAppear(perform: setIconColor)
+            .onChange(of: selection, perform: { index in setIconColor() })
+        }
+        
+        func setIconColor() {
+            isSelected = index == selection
+            color = isSelected ? Theme.Alpha.iconFocus : Theme.Alpha.icon
         }
     }
 }

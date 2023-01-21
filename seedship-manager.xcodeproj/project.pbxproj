@@ -19,6 +19,9 @@
 		FA2AC15C29754F56004D8A87 /* AssetSeedBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC15B29754F56004D8A87 /* AssetSeedBank.swift */; };
 		FA2AC15E297550A5004D8A87 /* PresenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC15D297550A5004D8A87 /* PresenterButton.swift */; };
 		FA2AC161297550F4004D8A87 /* ModalModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC160297550F4004D8A87 /* ModalModifiers.swift */; };
+		FA2AC164297651EB004D8A87 /* OpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC163297651EB004D8A87 /* OpsView.swift */; };
+		FA2AC178297A23FC004D8A87 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC177297A23FC004D8A87 /* Theme.swift */; };
+		FA2AC17A297B44C3004D8A87 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC179297B44C3004D8A87 /* Logic.swift */; };
 		FA7D6FEC296BBC6700F594FE /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D6FEB296BBC6700F594FE /* GameManager.swift */; };
 		FA8BC1652956D9A800965337 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BC1642956D9A800965337 /* TasksView.swift */; };
 		FA8BC1682956FF2600965337 /* CrewMember+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BC1662956FF2600965337 /* CrewMember+CoreDataClass.swift */; };
@@ -27,7 +30,6 @@
 		FA8BC16D2957001F00965337 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BC16C2957001F00965337 /* OverviewView.swift */; };
 		FA8BC16F2959303F00965337 /* CrewSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BC16E2959303F00965337 /* CrewSelectorView.swift */; };
 		FA8BC171295930BB00965337 /* AssignCrewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BC170295930BB00965337 /* AssignCrewButton.swift */; };
-		FA8DF2162951B6040074833D /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DF2152951B6040074833D /* NavigationButton.swift */; };
 		FA8DF2192951C0880074833D /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DF2182951C0880074833D /* Seeder.swift */; };
 		FA8DF21B2952369A0074833D /* FacilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DF21A2952369A0074833D /* FacilitiesView.swift */; };
 		FA8DF21E29523B910074833D /* Facility+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DF21C29523B910074833D /* Facility+CoreDataClass.swift */; };
@@ -52,11 +54,8 @@
 		FAA40BC8294D94A300FF153B /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BC7294D94A300FF153B /* TextModifiers.swift */; };
 		FAA40BCA294D95CE00FF153B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BC9294D95CE00FF153B /* Constants.swift */; };
 		FAA40BCE294DE21300FF153B /* CrewMemberItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BCD294DE21300FF153B /* CrewMemberItem.swift */; };
-		FAA40BD0294E553900FF153B /* StackModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BCF294E553900FF153B /* StackModifiers.swift */; };
-		FAA40BD5294E6F5B00FF153B /* HeaderTechnical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BD4294E6F5B00FF153B /* HeaderTechnical.swift */; };
 		FAA40BD7294F207100FF153B /* CrewDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BD6294F207100FF153B /* CrewDatabaseView.swift */; };
 		FAA40BD9294F272000FF153B /* HorizontalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BD8294F272000FF153B /* HorizontalDivider.swift */; };
-		FAA40BDB294F29A600FF153B /* SubheaderTechnical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BDA294F29A600FF153B /* SubheaderTechnical.swift */; };
 		FAA40BDD294FB0AE00FF153B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BDC294FB0AE00FF153B /* HomeView.swift */; };
 		FAA40BE42950038600FF153B /* CrewMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA40BE32950038600FF153B /* CrewMemberView.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +90,9 @@
 		FA2AC15B29754F56004D8A87 /* AssetSeedBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSeedBank.swift; sourceTree = "<group>"; };
 		FA2AC15D297550A5004D8A87 /* PresenterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterButton.swift; sourceTree = "<group>"; };
 		FA2AC160297550F4004D8A87 /* ModalModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalModifiers.swift; sourceTree = "<group>"; };
+		FA2AC163297651EB004D8A87 /* OpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpsView.swift; sourceTree = "<group>"; };
+		FA2AC177297A23FC004D8A87 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FA2AC179297B44C3004D8A87 /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		FA7D6FEB296BBC6700F594FE /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		FA8BC1642956D9A800965337 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		FA8BC1662956FF2600965337 /* CrewMember+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CrewMember+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -99,7 +101,6 @@
 		FA8BC16C2957001F00965337 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		FA8BC16E2959303F00965337 /* CrewSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewSelectorView.swift; sourceTree = "<group>"; };
 		FA8BC170295930BB00965337 /* AssignCrewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignCrewButton.swift; sourceTree = "<group>"; };
-		FA8DF2152951B6040074833D /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		FA8DF2182951C0880074833D /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		FA8DF21A2952369A0074833D /* FacilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilitiesView.swift; sourceTree = "<group>"; };
 		FA8DF21C29523B910074833D /* Facility+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Facility+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -128,11 +129,8 @@
 		FAA40BC7294D94A300FF153B /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
 		FAA40BC9294D95CE00FF153B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAA40BCD294DE21300FF153B /* CrewMemberItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberItem.swift; sourceTree = "<group>"; };
-		FAA40BCF294E553900FF153B /* StackModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModifiers.swift; sourceTree = "<group>"; };
-		FAA40BD4294E6F5B00FF153B /* HeaderTechnical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTechnical.swift; sourceTree = "<group>"; };
 		FAA40BD6294F207100FF153B /* CrewDatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDatabaseView.swift; sourceTree = "<group>"; };
 		FAA40BD8294F272000FF153B /* HorizontalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDivider.swift; sourceTree = "<group>"; };
-		FAA40BDA294F29A600FF153B /* SubheaderTechnical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubheaderTechnical.swift; sourceTree = "<group>"; };
 		FAA40BDC294FB0AE00FF153B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FAA40BE32950038600FF153B /* CrewMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,7 +216,6 @@
 		FA8DF2142951B5E60074833D /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				FA8DF2152951B6040074833D /* NavigationButton.swift */,
 				FA8BC170295930BB00965337 /* AssignCrewButton.swift */,
 				FA2AC15D297550A5004D8A87 /* PresenterButton.swift */,
 			);
@@ -325,7 +322,6 @@
 				FA8BC1632956D94200965337 /* Facility */,
 				FA8DF22C2953ABE10074833D /* Icons */,
 				FA8DF2142951B5E60074833D /* Buttons */,
-				FAA40BD3294E6F4600FF153B /* Headers */,
 				FAA40BCB294DE1F300FF153B /* Lists */,
 				FAA40BD8294F272000FF153B /* HorizontalDivider.swift */,
 			);
@@ -342,6 +338,7 @@
 				FA8DF21A2952369A0074833D /* FacilitiesView.swift */,
 				FA8DF22A2953A5520074833D /* HubView.swift */,
 				FA8DF2322953BB400074833D /* ManualView.swift */,
+				FA2AC163297651EB004D8A87 /* OpsView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -359,11 +356,12 @@
 			children = (
 				FAA40BC7294D94A300FF153B /* TextModifiers.swift */,
 				FAA40BC9294D95CE00FF153B /* Constants.swift */,
-				FAA40BCF294E553900FF153B /* StackModifiers.swift */,
 				FA8DF224295242730074833D /* ListModifiers.swift */,
 				FA8DF228295320500074833D /* NavigationModifiers.swift */,
 				FA8DF23529545CBA0074833D /* BorderModifiers.swift */,
 				FA2AC160297550F4004D8A87 /* ModalModifiers.swift */,
+				FA2AC177297A23FC004D8A87 /* Theme.swift */,
+				FA2AC179297B44C3004D8A87 /* Logic.swift */,
 			);
 			path = "View Modifiers";
 			sourceTree = "<group>";
@@ -384,15 +382,6 @@
 				FAA40BCD294DE21300FF153B /* CrewMemberItem.swift */,
 			);
 			path = Items;
-			sourceTree = "<group>";
-		};
-		FAA40BD3294E6F4600FF153B /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				FAA40BD4294E6F5B00FF153B /* HeaderTechnical.swift */,
-				FAA40BDA294F29A600FF153B /* SubheaderTechnical.swift */,
-			);
-			path = Headers;
 			sourceTree = "<group>";
 		};
 		FAA40BE0294FFC0F00FF153B /* Database Model */ = {
@@ -540,27 +529,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8DF23629545CBA0074833D /* BorderModifiers.swift in Sources */,
-				FAA40BD0294E553900FF153B /* StackModifiers.swift in Sources */,
+				FA2AC164297651EB004D8A87 /* OpsView.swift in Sources */,
 				FA8BC16F2959303F00965337 /* CrewSelectorView.swift in Sources */,
 				FA2AC15C29754F56004D8A87 /* AssetSeedBank.swift in Sources */,
 				FAA40B8C294C6DF600FF153B /* ContentView.swift in Sources */,
 				FA2AC1402970F06C004D8A87 /* Command.swift in Sources */,
 				FA8DF2332953BB400074833D /* ManualView.swift in Sources */,
-				FAA40BDB294F29A600FF153B /* SubheaderTechnical.swift in Sources */,
+				FA2AC178297A23FC004D8A87 /* Theme.swift in Sources */,
 				FA8DF22E2953ABF70074833D /* Icon.swift in Sources */,
 				FA8DF225295242730074833D /* ListModifiers.swift in Sources */,
 				FAA40BC8294D94A300FF153B /* TextModifiers.swift in Sources */,
 				FAA40BD7294F207100FF153B /* CrewDatabaseView.swift in Sources */,
-				FAA40BD5294E6F5B00FF153B /* HeaderTechnical.swift in Sources */,
 				FAA40BDD294FB0AE00FF153B /* HomeView.swift in Sources */,
 				FA8BC16B2956FF6800965337 /* Facility+CoreDataProperties.swift in Sources */,
-				FA8DF2162951B6040074833D /* NavigationButton.swift in Sources */,
 				FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */,
 				FA2AC137296DE1C8004D8A87 /* Facilities.swift in Sources */,
 				FA8DF22729530B050074833D /* SideBar.swift in Sources */,
 				FA2AC1422970FF79004D8A87 /* Commander.swift in Sources */,
 				FAA40BCA294D95CE00FF153B /* Constants.swift in Sources */,
 				FA8DF2192951C0880074833D /* Seeder.swift in Sources */,
+				FA2AC17A297B44C3004D8A87 /* Logic.swift in Sources */,
 				FA2AC14B2972AA30004D8A87 /* Command+CoreDataProperties.swift in Sources */,
 				FA2AC14D2973FACF004D8A87 /* Assets.swift in Sources */,
 				FA8BC16D2957001F00965337 /* OverviewView.swift in Sources */,

@@ -7,29 +7,16 @@
 
 import SwiftUI
 
-enum BorderColor {
-    case primary
-    case secondary
-    
-    var color: Color {
-        switch self {
-        case .primary: return Color(CustomColor.BorderDefault.rawValue)
-        case .secondary: return Color(CustomColor.BorderSecondary.rawValue)
-        }
-    }
-}
-
 struct Border: ViewModifier {
-    @State var borderColor: BorderColor = BorderColor.primary
+    @State var theme: Theme = Theme.Alpha
     @State var padding: CGFloat = 12
     
     func body(content: Content) -> some View {
         content
             .padding(padding)
-            .frame(maxWidth: .infinity)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(borderColor.color, lineWidth: 2)
+                    .stroke(theme.border, lineWidth: 2)
             )
     }
 }

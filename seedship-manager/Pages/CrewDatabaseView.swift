@@ -14,17 +14,16 @@ struct CrewDatabaseView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(CustomColor.CardBackground.rawValue).ignoresSafeArea()
+//                CustomColor.BackgroundCrew.color.ignoresSafeArea()
                 
                 VStack(spacing: 20) {
                     VStack {
                         Text("Connection: Live")
-                            .modifier(AppText(type: TextType.extraSmallBody()))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding([.leading], 16)
                         
                         VStack(spacing: 24) {
-                            SubHeaderTechnical(header: "Database")
+                            Text("Database")
                                 .padding([.top], 16)
                             
                             List (members) { member in
@@ -38,18 +37,14 @@ struct CrewDatabaseView: View {
                             .sheet(item: $selectedMember) { member in
                                 CrewMemberView(member: member)
                             }
-                            .modifier(ListPlain())
-                            
-                            HorizontalDivider()
-                            
-                            Spacer()
+                            .modifier(ListPlain())                         
                         }
-                        .modifier(ContentBlock())
+//                        .modifier(ContentBlock())
                         
                         Spacer()
                     }
                 }
-                .padding([.leading, .trailing, .bottom], 24)
+//                .padding([.leading, .trailing, .bottom], 24)
                 .padding([.top], 12)
             }
             .modifier(Nav(title: "Crew"))
