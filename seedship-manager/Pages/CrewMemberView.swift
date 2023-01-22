@@ -47,9 +47,9 @@ struct CrewMemberView_Previews: PreviewProvider {
   }
 }
 
-func createMember() -> CrewMember {
+func createMember(name: String = "Nero Ren") -> CrewMember {
 let member = CrewMember(context: PersistenceController.preview.viewContext)
-    member.name = "Alex Viney"
+    member.name = name
     member.age = 43
     member.weight = 88
     member.id =  UUID()

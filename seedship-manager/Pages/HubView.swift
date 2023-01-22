@@ -14,74 +14,62 @@ struct HubView: View {
     @State var frameRate = 1.0
     
     var body: some View {
-            ZStack {
-                Theme.Alpha.color.ignoresSafeArea()
-                
-                HStack {
+        ZStack {
+            Theme.Alpha.color.ignoresSafeArea()
+            
+            VStack {
+                VStack {
                     if isDisclosed {
                         VStack {
-                            VStack {
-                                HStack {
-                                    Picker("", selection: $navIndex) {
-                                       Text("Messages").tag(0)
-                                       Text("Status").tag(1)
-                                       Text("Navigation").tag(2)
-                                   }
-                                   .pickerStyle(.segmented)
-                                   .tabViewStyle(PageTabViewStyle())
-                                }
-                                                      
-                               TabView(selection: $navIndex,
-                                       content:  {
-                                   TasksView()
-                                       .tag(0)
-                               })
-                               .tabViewStyle(PageTabViewStyle())
-                            }
-                            .modifier(Border())
-                            
                             HStack {
-                                Icon(name: "clock")
-                                Slider(value: $frameRate, in: 0.1...100)
-                                Text("\(frameRate, specifier: "%.2f")")
-                                
+                                Picker("", selection: $navIndex) {
+                                    Text("Messages").tag(0)
+                                    Text("Status").tag(1)
+                                    Text("Navigation").tag(2)
+                                }
+                                .pickerStyle(.segmented)
+                                .tabViewStyle(PageTabViewStyle())
                             }
-                            .padding([.top], 8)
+                            
+                            TabView(selection: $navIndex,
+                                    content:  {
+                                TasksView()
+                                    .tag(0)
+                            })
+                            .tabViewStyle(PageTabViewStyle())
+                            .modifier(Border())
                         }
-                    } else {
-                        Spacer()
                     }
-
-                    VStack {
+                    
+                    HStack {
                         if isDisclosed {
-                            PresenterButton {
-                                AnyView(ManualView())
-                            } label: {
-                                Icon(name: "book.closed", size: 20)
-                            }
-                            Spacer()
+                            Icon(name: "clock")
+                            Slider(value: $frameRate, in: 0.1...100)
+                            Text("\(frameRate, specifier: "%.2f")")
                         }
                         
-                        HStack {
-                            Button {
-                                withAnimation {
-                                    isDisclosed.toggle()
-                                }
-                            } label: {
-                                if isDisclosed {
-                                    Icon(name: "chevron.up")
-                                } else {
-                                    Icon(name: "chevron.down")
-                                }
+                        Button {
+                            withAnimation {
+                                isDisclosed.toggle()
+                            }
+                        } label: {
+                            if isDisclosed {
+                                Icon(name: "chevron.up")
+                            } else {
+                                Icon(name: "chevron.down")
                             }
                         }
+                        
                     }
+                    .padding([.top], 8)
+                    
                 }
-                .frame(alignment: .trailing)
-                .padding(12)
             }
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .padding(12)
+        }
         .frame(height: isDisclosed ? 300 : 50, alignment: .top)
-                  .clipped()
+        .clipped()
     }
     
     struct HubView_Previews: PreviewProvider {

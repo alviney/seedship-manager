@@ -24,6 +24,10 @@ enum Theme: String {
         return Color("\(self.rawValue)AccentActive")
     }
     
+    var accentInactive: Color {
+        return Color("\(self.rawValue)AccentInactive")
+    }
+    
     var icon: Color {
         return Color("\(self.rawValue)Icon")
     }
@@ -46,5 +50,17 @@ enum Theme: String {
     
     var border: Color {
         return Color("\(self.rawValue)Border")
+    }
+    
+    static var Health: Color {
+        return Color("AppHealth")
+    }
+    
+    static var Occupation: Color {
+        return Color("AppOccupation")
+    }
+    
+    func opacity(_ val: CGFloat) -> Color {
+        return self.color.opacity(val)
     }
 }

@@ -13,34 +13,38 @@ struct FacilitiesView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-//                CustomColor.BackgroundFacility.color.ignoresSafeArea()
+                //                CustomColor.BackgroundFacility.color.ignoresSafeArea()
                 ScrollView(showsIndicators: false) {
-                    VStack(spacing: 12) {
+                    VStack(spacing: 24) {
                         ForEach (facilities) { facility in
-                            HStack {
-                                HorizontalDivider()
-                                Text("Offline")
-                                HorizontalDivider()
+                            VStack {
+                                HStack {
+                                    HorizontalDivider(height: 1, color: Theme.Alpha.accentInactive)
+                                    Text("Offline")
+                                        .modifier(CFont(textStyle: .caption, color: .constant(Theme.Alpha.accentInactive)))
+                                    HorizontalDivider(height: 1, color: Theme.Alpha.accentInactive)
+                                }
+                                
+                                NavigationLink {
+                                    AnyView(facility.view())
+                                } label: {
+                                    HStack {
+                                        Text(facility.name ?? "Name")
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        
+                                        Spacer()
+                                        
+//                                        Text("Offline")
+//                                            .padding([.trailing], 24)
+                                        
+                                        Icon(name: "chevron.right", size: 12, theme: Theme.Beta)
+                                    }
+                                }
+                                .padding(4)
+                                .modifier(Border())
+                                .padding(2)
                             }
                             
-                            NavigationLink {
-                                AnyView(facility.view())
-                            } label: {
-                                HStack {
-                                    Text(facility.name ?? "Name")
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                    
-                                    Spacer()
-                                    
-                                    Text("Offline")
-                                        .padding([.trailing], 24)
-                                    
-                                    Icon(name: "chevron.right", size: 12, theme: Theme.Beta)
-                                }
-                            }
-                            .padding(4)
-                            .modifier(Border())
-                            .padding(2)
                         }
                     }
                 }

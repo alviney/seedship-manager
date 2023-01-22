@@ -12,40 +12,71 @@ struct CrewMemberItem: View {
     
     var body: some View {
         ZStack {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Text(String(member.name!))
+            HStack {
+                VStack {
                     HStack {
-                        Text("")
-                            .frame(width: 1)
-                            .background(Color.black)
+                        Text(String(member.name!))
+                        Spacer()
                     }
-                    .frame(maxWidth: .infinity)
                     HStack {
-                        Text("Age: " + String(member.age))
+                        Text("In \(member.facility?.name ?? "corridors")")
+                            .font(Font.custom(CustomFont.Technical.rawValue, size: 10))
+                        Spacer()
+                    }
+                    
+                }
+                
+                
+                VStack(spacing: 8) {
+//                    HStack {
+                        
+//                        Icon(name: "person", theme: .Beta)
+//                    }
+                    
+                    HStack {
+                        ProgressView(value: 0.5)
+                            .tint(Theme.Health)
+                        Icon(name: "heart.fill", size: 12, color: Theme.Health)
+                    }
+                                        
+                    VStack {
+//                        HStack {
+//                            Text("Age \(String(member.age))")
+//                                .modifier(CFont(textStyle: .footnote, theme: .Beta))
+//                                .fixedSize()
+//                            Spacer()
+//                            Text("Weight: \(member.weight)kg")
+//                                .modifier(CFont(textStyle: .footnote, theme: .Beta))
+//                                .fixedSize()
+//                        }
+                        HStack {
+                            Spacer()
+                            Text("Engineer")
+                                .modifier(CFont(textStyle: .footnote, color: .constant(Theme.Occupation)))
                             .fixedSize()
-                        Text("Weight: \(member.weight)kg")
-                            .fixedSize()
+                            Icon(name: "graduationcap.fill", size: 12, color: Theme.Occupation)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-                .frame(maxWidth: .infinity)
-                
-                Text("In \(member.facility?.name ?? "corridors")")
+                .frame(width: 150)
             }
-            .padding(12)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Theme.Alpha.border, lineWidth: 2)
-            )
+            .padding(2)
+            .modifier(Border(theme: .Beta))
         }
         .padding(2)
         .frame(maxWidth: .infinity)
+        .modifier(CFont(textStyle: .body, theme: .Beta))
     }
-//
-//    struct CrewMemberItem_Previews: PreviewProvider {
-//        static var previews: some View {
-//            CrewMemberItem(member: CrewMember(name: "Nero Ren", age: 43, id: UUID()))
-//        }
-//    }
+
+    struct CrewMemberItem_Previews: PreviewProvider {
+        static var previews: some View {
+            VStack {
+                CrewMemberItem(member: createMember())
+                CrewMemberItem(member: createMember(name: "Alexander Lizaar"))
+            }
+            .padding(12)
+            .background(Theme.Alpha.color)
+        }
+    }
 }

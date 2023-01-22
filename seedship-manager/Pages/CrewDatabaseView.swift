@@ -39,16 +39,16 @@ struct CrewDatabaseView: View {
                             }
                             .modifier(ListPlain())                         
                         }
-//                        .modifier(ContentBlock())
                         
                         Spacer()
                     }
                 }
-//                .padding([.leading, .trailing, .bottom], 24)
+
                 .padding([.top], 12)
             }
             .modifier(Nav(title: "Crew"))
         }
+        .modifier(CFont(textStyle: .footnote, theme: .Beta))
     }
     
     struct CrewDatabaseView_Previews: PreviewProvider {
