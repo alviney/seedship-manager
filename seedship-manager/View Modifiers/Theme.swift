@@ -10,6 +10,7 @@ import SwiftUI
 enum Theme: String {
     case Alpha = "Alpha"
     case Beta = "Beta"
+    case Charlie = "Charlie"
     case Manual = "Manual"
     
     var color: Color {
@@ -58,6 +59,10 @@ enum Theme: String {
     
     static var Occupation: Color {
         return Color("AppOccupation")
+    }
+    
+    static var MessageTask: Color {
+        return Color("AppMessageTask")
     }
     
     func opacity(_ val: CGFloat) -> Color {

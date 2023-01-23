@@ -79,7 +79,7 @@ func createFacility() -> Facility {
     facilityControls.lifeSupportOn = true
     
     let facility = Facility(context: moc)
-    facility.name = Facilities.BioFarm.rawValue
+    facility.name = FacilityAPI.BioFarm.rawValue
     facility.id =  UUID()
     facility.controls = facilityControls
     

@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA2AC137296DE1C8004D8A87 /* Facilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC136296DE1C8004D8A87 /* Facilities.swift */; };
+		FA160296297CB82A00311045 /* FeedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA160295297CB82A00311045 /* FeedMessage.swift */; };
+		FA160299297CC89500311045 /* FeedMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA160298297CC89500311045 /* FeedMessages.swift */; };
+		FA16029B297D38BE00311045 /* FeedMessageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16029A297D38BE00311045 /* FeedMessageDetail.swift */; };
+		FA16029D297DC98400311045 /* FeedPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16029C297DC98400311045 /* FeedPreview.swift */; };
+		FA2AC137296DE1C8004D8A87 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC136296DE1C8004D8A87 /* Facility.swift */; };
 		FA2AC1402970F06C004D8A87 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC13F2970F06C004D8A87 /* Command.swift */; };
 		FA2AC1422970FF79004D8A87 /* Commander.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1412970FF79004D8A87 /* Commander.swift */; };
 		FA2AC14729716106004D8A87 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC14629716106004D8A87 /* Executor.swift */; };
 		FA2AC14A2972AA30004D8A87 /* Command+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1482972AA30004D8A87 /* Command+CoreDataClass.swift */; };
 		FA2AC14B2972AA30004D8A87 /* Command+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1492972AA30004D8A87 /* Command+CoreDataProperties.swift */; };
-		FA2AC14D2973FACF004D8A87 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC14C2973FACF004D8A87 /* Assets.swift */; };
-		FA2AC14F29740155004D8A87 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC14E29740155004D8A87 /* Resources.swift */; };
+		FA2AC14D2973FACF004D8A87 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC14C2973FACF004D8A87 /* Asset.swift */; };
+		FA2AC14F29740155004D8A87 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC14E29740155004D8A87 /* Resource.swift */; };
 		FA2AC1512974C11E004D8A87 /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1502974C11E004D8A87 /* AssetsView.swift */; };
 		FA2AC15C29754F56004D8A87 /* AssetSeedBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC15B29754F56004D8A87 /* AssetSeedBank.swift */; };
 		FA2AC15E297550A5004D8A87 /* PresenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC15D297550A5004D8A87 /* PresenterButton.swift */; };
@@ -78,14 +82,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA2AC136296DE1C8004D8A87 /* Facilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facilities.swift; sourceTree = "<group>"; };
+		FA160295297CB82A00311045 /* FeedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMessage.swift; sourceTree = "<group>"; };
+		FA160298297CC89500311045 /* FeedMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMessages.swift; sourceTree = "<group>"; };
+		FA16029A297D38BE00311045 /* FeedMessageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMessageDetail.swift; sourceTree = "<group>"; };
+		FA16029C297DC98400311045 /* FeedPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPreview.swift; sourceTree = "<group>"; };
+		FA2AC136296DE1C8004D8A87 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		FA2AC13F2970F06C004D8A87 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FA2AC1412970FF79004D8A87 /* Commander.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commander.swift; sourceTree = "<group>"; };
 		FA2AC14629716106004D8A87 /* Executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executor.swift; sourceTree = "<group>"; };
 		FA2AC1482972AA30004D8A87 /* Command+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FA2AC1492972AA30004D8A87 /* Command+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		FA2AC14C2973FACF004D8A87 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		FA2AC14E29740155004D8A87 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		FA2AC14C2973FACF004D8A87 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		FA2AC14E29740155004D8A87 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		FA2AC1502974C11E004D8A87 /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		FA2AC15B29754F56004D8A87 /* AssetSeedBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSeedBank.swift; sourceTree = "<group>"; };
 		FA2AC15D297550A5004D8A87 /* PresenterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterButton.swift; sourceTree = "<group>"; };
@@ -160,6 +168,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA160297297CC87D00311045 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FA160298297CC89500311045 /* FeedMessages.swift */,
+				FA16029A297D38BE00311045 /* FeedMessageDetail.swift */,
+				FA16029C297DC98400311045 /* FeedPreview.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		FA2AC13C2970E93B004D8A87 /* Command */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,14 +211,15 @@
 			path = Hub;
 			sourceTree = "<group>";
 		};
-		FA7D6FE7296B997B00F594FE /* Model */ = {
+		FA7D6FE7296B997B00F594FE /* Model Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				FA2AC136296DE1C8004D8A87 /* Facilities.swift */,
-				FA2AC14C2973FACF004D8A87 /* Assets.swift */,
-				FA2AC14E29740155004D8A87 /* Resources.swift */,
+				FA2AC14C2973FACF004D8A87 /* Asset.swift */,
+				FA2AC136296DE1C8004D8A87 /* Facility.swift */,
+				FA160295297CB82A00311045 /* FeedMessage.swift */,
+				FA2AC14E29740155004D8A87 /* Resource.swift */,
 			);
-			path = Model;
+			path = "Model Interfaces";
 			sourceTree = "<group>";
 		};
 		FA8BC1632956D94200965337 /* Facility */ = {
@@ -306,7 +325,7 @@
 			children = (
 				FA8DF2172951C0700074833D /* Seed */,
 				FAA40BE0294FFC0F00FF153B /* Database Model */,
-				FA7D6FE7296B997B00F594FE /* Model */,
+				FA7D6FE7296B997B00F594FE /* Model Interfaces */,
 				FA2AC13C2970E93B004D8A87 /* Command */,
 				FA7D6FEB296BBC6700F594FE /* GameManager.swift */,
 				FAA40BBB294C78EB00FF153B /* db.xcdatamodeld */,
@@ -320,6 +339,7 @@
 				FA2AC1622975E3A5004D8A87 /* Hub */,
 				FA2AC15629754F1A004D8A87 /* Asset */,
 				FA8BC1632956D94200965337 /* Facility */,
+				FA160297297CC87D00311045 /* Feed */,
 				FA8DF22C2953ABE10074833D /* Icons */,
 				FA8DF2142951B5E60074833D /* Buttons */,
 				FAA40BCB294DE1F300FF153B /* Lists */,
@@ -543,14 +563,17 @@
 				FAA40BDD294FB0AE00FF153B /* HomeView.swift in Sources */,
 				FA8BC16B2956FF6800965337 /* Facility+CoreDataProperties.swift in Sources */,
 				FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */,
-				FA2AC137296DE1C8004D8A87 /* Facilities.swift in Sources */,
+				FA2AC137296DE1C8004D8A87 /* Facility.swift in Sources */,
 				FA8DF22729530B050074833D /* SideBar.swift in Sources */,
 				FA2AC1422970FF79004D8A87 /* Commander.swift in Sources */,
 				FAA40BCA294D95CE00FF153B /* Constants.swift in Sources */,
+				FA160296297CB82A00311045 /* FeedMessage.swift in Sources */,
 				FA8DF2192951C0880074833D /* Seeder.swift in Sources */,
 				FA2AC17A297B44C3004D8A87 /* Logic.swift in Sources */,
+				FA16029B297D38BE00311045 /* FeedMessageDetail.swift in Sources */,
 				FA2AC14B2972AA30004D8A87 /* Command+CoreDataProperties.swift in Sources */,
-				FA2AC14D2973FACF004D8A87 /* Assets.swift in Sources */,
+				FA2AC14D2973FACF004D8A87 /* Asset.swift in Sources */,
+				FA160299297CC89500311045 /* FeedMessages.swift in Sources */,
 				FA8BC16D2957001F00965337 /* OverviewView.swift in Sources */,
 				FA8DF2382955AD0C0074833D /* FacilityView.swift in Sources */,
 				FA8BC1692956FF2600965337 /* CrewMember+CoreDataProperties.swift in Sources */,
@@ -563,6 +586,7 @@
 				FA8BC171295930BB00965337 /* AssignCrewButton.swift in Sources */,
 				FA8BC1682956FF2600965337 /* CrewMember+CoreDataClass.swift in Sources */,
 				FAA40B8A294C6DF600FF153B /* seedship_managerApp.swift in Sources */,
+				FA16029D297DC98400311045 /* FeedPreview.swift in Sources */,
 				FA2AC14729716106004D8A87 /* Executor.swift in Sources */,
 				FA8DF21B2952369A0074833D /* FacilitiesView.swift in Sources */,
 				FAA40BBA294C6F8200FF153B /* PersistenceController.swift in Sources */,
@@ -570,7 +594,7 @@
 				FAA40BCE294DE21300FF153B /* CrewMemberItem.swift in Sources */,
 				FAA40BD9294F272000FF153B /* HorizontalDivider.swift in Sources */,
 				FA2AC1512974C11E004D8A87 /* AssetsView.swift in Sources */,
-				FA2AC14F29740155004D8A87 /* Resources.swift in Sources */,
+				FA2AC14F29740155004D8A87 /* Resource.swift in Sources */,
 				FA8BC1652956D9A800965337 /* TasksView.swift in Sources */,
 				FAA40BE42950038600FF153B /* CrewMemberView.swift in Sources */,
 			);

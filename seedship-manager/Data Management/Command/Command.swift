@@ -40,6 +40,37 @@ enum FacilityCommand : CommandProtocol {
         }
     }
     
+    func onStart(command: Command) {
+        command.running = true
+        command.status = "Running"
+        
+        var msg: String
+        switch self {
+        case .Wake:
+            msg = "\(command.queue?.member?.name ?? "Member") is being woken up"
+        default:
+            msg = "\(command.name ?? "") has started"
+        }
+        
+        let data = FeedMessageData(preview: msg)
+        FeedMessageAPI.Task.persist(data: data)
+    }
+    
+    func onEnd(command: Command) {
+        var msg: String
+        switch self {
+        case .Wake:
+            msg = "\(command.queue?.member?.name ?? "Member") is now awake"
+        default:
+            msg = "\(command.name ?? "") has finished"
+        }
+        
+        let data = FeedMessageData(preview: msg)
+        FeedMessageAPI.Task.persist(data: data)
+        
+        PersistenceController.shared.viewContext.delete(command)
+    }
+    
     func createFor(member: CrewMember, facility: Facility) {
         let moc = PersistenceController.shared.viewContext
         

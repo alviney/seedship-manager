@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreData
 
-enum Facilities: String, CaseIterable {
+enum FacilityAPI: String, CaseIterable {
     case CryoChamber = "Cryo Chamber"
     case CrewQuarters = "Crew Quarters"
     case MedicalBay = "Medical Bay"

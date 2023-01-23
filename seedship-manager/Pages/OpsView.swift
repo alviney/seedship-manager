@@ -8,10 +8,32 @@
 import SwiftUI
 
 struct OpsView: View {
+    @State var navIndex = 0
+    
     var body: some View {
         NavigationStack {
-            Text("All systems offline")
-        }        
+            VStack {
+                HStack {
+                    Picker("", selection: $navIndex) {
+                        Text("Messages").tag(0)
+                        Text("Status").tag(1)
+                        Text("Navigation").tag(2)
+                    }
+                    .pickerStyle(.segmented)
+                    .tabViewStyle(PageTabViewStyle())
+                }
+                .padding(12)
+                
+                TabView(selection: $navIndex,
+                        content:  {
+                    Text("All systems offline")
+                        .tag(0)
+                })
+                .padding(8)
+                .tabViewStyle(PageTabViewStyle())
+                .background(Theme.Beta.color.opacity(0.5))
+            }
+        }
     }
 }
 

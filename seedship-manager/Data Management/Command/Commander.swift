@@ -14,9 +14,13 @@ struct Commander : GameLoop {
         
         for member in members {
             if let command = member.currentCommand {
-                FacilityCommand(string: command.name!).execute(command: command)
-                if command.progress == 1 {
-                    PersistenceController.shared.viewContext.delete(command)
+                let facilityCommand = FacilityCommand(string: command.name!)
+                if (command.progress == 0) {
+                    facilityCommand.onStart(command: command)
+                }
+                facilityCommand.execute(command: command)
+                if (command.progress >= 1) {
+                    facilityCommand.onEnd(command: command)
                 }
             }
         }

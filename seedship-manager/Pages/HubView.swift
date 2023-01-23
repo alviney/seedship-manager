@@ -17,28 +17,13 @@ struct HubView: View {
         ZStack {
             Theme.Alpha.color.ignoresSafeArea()
             
-            VStack {
+            VStack {                     
                 VStack {
                     if isDisclosed {
-                        VStack {
-                            HStack {
-                                Picker("", selection: $navIndex) {
-                                    Text("Messages").tag(0)
-                                    Text("Status").tag(1)
-                                    Text("Navigation").tag(2)
-                                }
-                                .pickerStyle(.segmented)
-                                .tabViewStyle(PageTabViewStyle())
-                            }
-                            
-                            TabView(selection: $navIndex,
-                                    content:  {
-                                TasksView()
-                                    .tag(0)
-                            })
-                            .tabViewStyle(PageTabViewStyle())
-                            .modifier(Border())
-                        }
+                        FeedMessages()
+                            .padding(8)
+                            .background(Theme.Beta.color.opacity(0.5))
+                            .modifier(Border(padding: 0))
                     }
                     
                     HStack {
@@ -46,6 +31,8 @@ struct HubView: View {
                             Icon(name: "clock")
                             Slider(value: $frameRate, in: 0.1...100)
                             Text("\(frameRate, specifier: "%.2f")")
+                        } else {
+                            FeedPreview()
                         }
                         
                         Button {
@@ -61,21 +48,20 @@ struct HubView: View {
                         }
                         
                     }
-                    .padding([.top], 8)
-                    
                 }
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(12)
         }
-        .frame(height: isDisclosed ? 300 : 50, alignment: .top)
+        .frame(height: isDisclosed ? 300 : 60, alignment: .top)
         .clipped()
     }
     
     struct HubView_Previews: PreviewProvider {
         static var previews: some View {
-            HubView(isDisclosed: .constant(true))
-            HubView(isDisclosed: .constant(false))
+            let moc = PersistenceController.preview.container.viewContext
+            HubView(isDisclosed: .constant(true)).environment(\.managedObjectContext, moc)
+            HubView(isDisclosed: .constant(false)).environment(\.managedObjectContext, moc)
         }
     }
 }

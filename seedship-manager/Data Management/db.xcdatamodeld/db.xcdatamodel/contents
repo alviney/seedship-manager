@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G320" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Asset" representedClassName="Asset" syncable="YES" codeGenerationType="class">
         <attribute name="condition" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="String"/>
@@ -48,6 +48,11 @@
         <attribute name="powerOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="waterOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="facility" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Facility" inverseName="controls" inverseEntity="Facility"/>
+    </entity>
+    <entity name="FeedMessage" representedClassName="FeedMessage" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="preview" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="class">
         <attribute name="elapsedTime" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>

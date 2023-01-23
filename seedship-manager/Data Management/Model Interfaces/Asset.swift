@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 import SwiftUI
 
-enum Assets: String, CaseIterable {
+enum AssetAPI: String, CaseIterable {
     case SeedBank = "Seed Bank"
     
     init?(id : Int) {

@@ -50,10 +50,9 @@ struct PersistenceController  {
     }
     
     public func clearDatabase() {
-        let persistentContainer = PersistenceController.shared.container
-        guard let url = persistentContainer.persistentStoreDescriptions.first?.url else { return }
+        guard let url = container.persistentStoreDescriptions.first?.url else { return }
         
-        let persistentStoreCoordinator = persistentContainer.persistentStoreCoordinator
+        let persistentStoreCoordinator = container.persistentStoreCoordinator
 
          do {
              try persistentStoreCoordinator.destroyPersistentStore(at:url, ofType: NSSQLiteStoreType, options: nil)

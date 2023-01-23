@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-enum Resources: String, CaseIterable {
+enum ResourceAPI: String, CaseIterable {
     case SeedLettuce = "Seed Lettuce"
     
     init?(id : Int) {

@@ -13,7 +13,6 @@ struct HomeView: View {
     @State private var isDisclosed = true
     
     init() {
-        print("init")
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.init(name: CustomFont.Technical.rawValue, size: 16)! ], for: .normal)
         
         UIBarButtonItem.appearance()
@@ -25,6 +24,22 @@ struct HomeView: View {
             Theme.Alpha.color.ignoresSafeArea()
             
             VStack (spacing: 0){
+                HStack {
+                    Text("System Feed")
+                        .customFont()
+                    Spacer()
+                    HStack(spacing: 0) {
+                        Text("Connection: ")
+                        Text("Live")
+                            .customFont(color: .constant(Theme.Alpha.accentActive), size: 8)
+                    }
+                    Spacer()
+                    Text("Elapsed Time: 1891239")
+                }
+                .customFont(size: 8)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.leading, .trailing], 8)
+                
                 HubView(isDisclosed: $isDisclosed)
                 
                 HorizontalDivider(height: 4)

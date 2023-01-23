@@ -14,7 +14,7 @@ struct AssetsView: View {
         VStack {
             ForEach (assets) { asset in
                 PresenterButton {
-                    AnyView(Assets(rawValue: asset.blueprint?.name ?? "")?.view(asset: asset))
+                    AnyView(AssetAPI(rawValue: asset.blueprint?.name ?? "")?.view(asset: asset))
                 } label: {
                     HStack {
                         VStack(alignment: .leading, spacing: 8) {

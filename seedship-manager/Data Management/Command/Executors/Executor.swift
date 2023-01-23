@@ -13,12 +13,6 @@ enum Executor {
     case Wake
     
     func execute(command: Command) {
-        // run start
-        if command.progress == 0 {
-            command.running = true
-            command.status = "Running"
-        }
-                
         // apply progress
         // apply custom modifiers here. e.g. CrewMember skill and equipment condition affect
         let tickRate = Float(0.1)
