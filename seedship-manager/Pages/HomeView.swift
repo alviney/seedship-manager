@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selection = 1
-    @State private var navIndex = 0
     @State private var isDisclosed = true
     
     init() {
@@ -24,24 +23,8 @@ struct HomeView: View {
             Theme.Alpha.color.ignoresSafeArea()
             
             VStack (spacing: 0){
-                HStack {
-                    Text("System Feed")
-                        .customFont()
-                    Spacer()
-                    HStack(spacing: 0) {
-                        Text("Connection: ")
-                        Text("Live")
-                            .customFont(color: .constant(Theme.Alpha.accentActive), size: 8)
-                    }
-                    Spacer()
-                    Text("Elapsed Time: 1891239")
-                }
-                .customFont(size: 8)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.leading, .trailing], 8)
-                
+                FeedHeader()
                 HubView(isDisclosed: $isDisclosed)
-                
                 HorizontalDivider(height: 4)
                 
                 if selection == 0 {
@@ -53,24 +36,7 @@ struct HomeView: View {
                     FacilitiesView()
                 }
                 
-                VStack {
-                    HorizontalDivider(height: 4)
-                    HStack  {
-                        TabButton(selection: $selection, index: 0, icon: "person.3.fill", title: "Crew")
-                        Spacer()
-                        TabButton(selection: $selection, index: 1, icon: "tv.inset.filled", title: "Ops")
-                        Spacer()
-                        TabButton(selection: $selection, index: 2, icon: "door.left.hand.open", title: "Facs")
-                    }
-                    .padding([.top], 24)
-                    .padding([.leading, .trailing], 48)
-                    .frame(maxWidth: .infinity)
-                    .onChange(of: selection, perform: { index in
-                        withAnimation {
-                            isDisclosed = index ==  1
-                        }
-                    })
-                }
+                MainTabBar(selection: $selection, onChange: $isDisclosed)
             }
         }
     }
@@ -78,37 +44,6 @@ struct HomeView: View {
     struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
             HomeView()
-        }
-    }
-    
-    struct TabButton : View {
-        @Binding var selection: Int
-        public var index: Int
-        public var icon: String
-        public var title: String?
-        @State private var isSelected: Bool = false
-        @State var color = Theme.Alpha.icon
-        
-        var body: some View {
-            Button {
-                selection = index
-            } label: {
-                VStack (spacing: 8) {
-                    Icon(name: icon, active: $isSelected)
-                    if let str = title {
-                        Text(str)
-                            .modifier(CFont(textStyle: .caption, color: $color))
-                            
-                    }
-                }
-            }
-            .onAppear(perform: setIconColor)
-            .onChange(of: selection, perform: { index in setIconColor() })
-        }
-        
-        func setIconColor() {
-            isSelected = index == selection
-            color = isSelected ? Theme.Alpha.iconFocus : Theme.Alpha.icon
         }
     }
 }

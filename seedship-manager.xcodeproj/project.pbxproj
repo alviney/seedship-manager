@@ -11,6 +11,8 @@
 		FA160299297CC89500311045 /* FeedMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA160298297CC89500311045 /* FeedMessages.swift */; };
 		FA16029B297D38BE00311045 /* FeedMessageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16029A297D38BE00311045 /* FeedMessageDetail.swift */; };
 		FA16029D297DC98400311045 /* FeedPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16029C297DC98400311045 /* FeedPreview.swift */; };
+		FA1602A1297E4CAE00311045 /* FeedHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1602A0297E4CAE00311045 /* FeedHeader.swift */; };
+		FA1602A4297E4CEE00311045 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1602A3297E4CEE00311045 /* MainTabBar.swift */; };
 		FA2AC137296DE1C8004D8A87 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC136296DE1C8004D8A87 /* Facility.swift */; };
 		FA2AC1402970F06C004D8A87 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC13F2970F06C004D8A87 /* Command.swift */; };
 		FA2AC1422970FF79004D8A87 /* Commander.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1412970FF79004D8A87 /* Commander.swift */; };
@@ -86,6 +88,8 @@
 		FA160298297CC89500311045 /* FeedMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMessages.swift; sourceTree = "<group>"; };
 		FA16029A297D38BE00311045 /* FeedMessageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMessageDetail.swift; sourceTree = "<group>"; };
 		FA16029C297DC98400311045 /* FeedPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPreview.swift; sourceTree = "<group>"; };
+		FA1602A0297E4CAE00311045 /* FeedHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeader.swift; sourceTree = "<group>"; };
+		FA1602A3297E4CEE00311045 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		FA2AC136296DE1C8004D8A87 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		FA2AC13F2970F06C004D8A87 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FA2AC1412970FF79004D8A87 /* Commander.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commander.swift; sourceTree = "<group>"; };
@@ -174,8 +178,17 @@
 				FA160298297CC89500311045 /* FeedMessages.swift */,
 				FA16029A297D38BE00311045 /* FeedMessageDetail.swift */,
 				FA16029C297DC98400311045 /* FeedPreview.swift */,
+				FA1602A0297E4CAE00311045 /* FeedHeader.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		FA1602A2297E4CD600311045 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				FA1602A3297E4CEE00311045 /* MainTabBar.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		FA2AC13C2970E93B004D8A87 /* Command */ = {
@@ -336,6 +349,7 @@
 		FAA40BBE294D08C300FF153B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FA1602A2297E4CD600311045 /* Navigation */,
 				FA2AC1622975E3A5004D8A87 /* Hub */,
 				FA2AC15629754F1A004D8A87 /* Asset */,
 				FA8BC1632956D94200965337 /* Facility */,
@@ -550,6 +564,7 @@
 			files = (
 				FA8DF23629545CBA0074833D /* BorderModifiers.swift in Sources */,
 				FA2AC164297651EB004D8A87 /* OpsView.swift in Sources */,
+				FA1602A1297E4CAE00311045 /* FeedHeader.swift in Sources */,
 				FA8BC16F2959303F00965337 /* CrewSelectorView.swift in Sources */,
 				FA2AC15C29754F56004D8A87 /* AssetSeedBank.swift in Sources */,
 				FAA40B8C294C6DF600FF153B /* ContentView.swift in Sources */,
@@ -562,6 +577,7 @@
 				FAA40BD7294F207100FF153B /* CrewDatabaseView.swift in Sources */,
 				FAA40BDD294FB0AE00FF153B /* HomeView.swift in Sources */,
 				FA8BC16B2956FF6800965337 /* Facility+CoreDataProperties.swift in Sources */,
+				FA1602A4297E4CEE00311045 /* MainTabBar.swift in Sources */,
 				FAA40BBD294C78EB00FF153B /* db.xcdatamodeld in Sources */,
 				FA2AC137296DE1C8004D8A87 /* Facility.swift in Sources */,
 				FA8DF22729530B050074833D /* SideBar.swift in Sources */,
