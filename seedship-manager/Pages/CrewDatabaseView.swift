@@ -14,41 +14,36 @@ struct CrewDatabaseView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-//                CustomColor.BackgroundCrew.color.ignoresSafeArea()
-                
+                Spacer()
                 VStack(spacing: 20) {
                     VStack {
-                        Text("Connection: Live")
+                        Text("Database: Connected")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding([.leading], 16)
                         
                         VStack(spacing: 24) {
-                            Text("Database")
-                                .padding([.top], 16)
-                            
                             List (members) { member in
-                                Button {
-                                    self.selectedMember = member
+                                NavigationLink {
+                                    CrewMemberView(member: member)
                                 } label: {
                                     CrewMemberItem(member: member)
+                                    
                                 }
                                 .modifier(ListItemPlain())
                             }
-                            .sheet(item: $selectedMember) { member in
-                                CrewMemberView(member: member)
-                            }
-                            .modifier(ListPlain())                         
+                            .modifier(ListPlain())
                         }
                         
                         Spacer()
                     }
                 }
-
                 .padding([.top], 12)
             }
+            .modifier(CFont(textStyle: .footnote, theme: .Beta))
             .modifier(Nav(title: "Crew"))
+            .padding(12)
+            .imageBG(image: Image(CustomImage.CrewBackground.rawValue), opacity: 0.5, blur: 2)
         }
-        .modifier(CFont(textStyle: .footnote, theme: .Beta))
     }
     
     struct CrewDatabaseView_Previews: PreviewProvider {

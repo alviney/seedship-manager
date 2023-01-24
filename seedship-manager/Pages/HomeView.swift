@@ -19,26 +19,25 @@ struct HomeView: View {
     }
     
     var body: some View {
-        ZStack {
-            Theme.Alpha.color.ignoresSafeArea()
-            
-            VStack (spacing: 0){
-                FeedHeader()
-                HubView(isDisclosed: $isDisclosed)
-                HorizontalDivider(height: 4)
-                
-                if selection == 0 {
-                    CrewDatabaseView()
+            ZStack {
+                VStack (spacing: 0){
+                    FeedHeader()
+                    HubView(isDisclosed: $isDisclosed)
+                    HorizontalDivider(height: 4)
+                    
+                    if selection == 0 {
+                        CrewDatabaseView()
+                    }
+                    else if selection == 1 {
+                        OpsView()
+                    } else {
+                        FacilitiesView()
+                    }
+                    
+                    MainTabBar(selection: $selection, onChange: $isDisclosed)
                 }
-                else if selection == 1 {
-                    OpsView()
-                } else {
-                    FacilitiesView()
-                }
-                
-                MainTabBar(selection: $selection, onChange: $isDisclosed)
             }
-        }
+            .imageBG(image: Image(CustomImage.HomeBackground.rawValue))
     }
     
     struct HomeView_Previews: PreviewProvider {

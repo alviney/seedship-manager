@@ -27,11 +27,7 @@ struct OverviewView: View {
                     HorizontalDivider(height: 1, color: Color.white)
                     ToggleView(title: "Water", isOn: Binding(projectedValue: $controls.waterOn))
                 }
-                .padding(8)
-                .padding([.top, .bottom], 12)
-                .background(Theme.Alpha.border.opacity(0.5))
-                .cornerRadius(8)
-                .modifier(Border(padding: 0))
+                .panelBG()
                 
                 HStack {
                     Text("Crew: \(facility.members?.count ?? 1)")

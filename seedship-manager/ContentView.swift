@@ -13,7 +13,7 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) var members: FetchedResults<CrewMember>
     
     func loadData() {
-        PersistenceController.shared.clearDatabase()
+//        PersistenceController.shared.clearDatabase()
         if (members.count == 0) {
             seed(moc: moc)
         }

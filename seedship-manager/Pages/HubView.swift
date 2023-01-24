@@ -15,8 +15,6 @@ struct HubView: View {
     
     var body: some View {
         ZStack {
-            Theme.Alpha.color.ignoresSafeArea()
-            
             VStack {                     
                 VStack {
                     if isDisclosed {
@@ -53,7 +51,7 @@ struct HubView: View {
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(12)
         }
-        .frame(height: isDisclosed ? 300 : 60, alignment: .top)
+        .frame(height: isDisclosed ? 300 : 50, alignment: .top)
         .clipped()
     }
     

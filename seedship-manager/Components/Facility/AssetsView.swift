@@ -25,7 +25,7 @@ struct AssetsView: View {
                             .font(.largeTitle)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .modifier(Border())
+                    .itemBG()
                 }
             }
             Spacer()

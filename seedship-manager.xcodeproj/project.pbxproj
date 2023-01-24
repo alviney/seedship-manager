@@ -13,6 +13,7 @@
 		FA16029D297DC98400311045 /* FeedPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16029C297DC98400311045 /* FeedPreview.swift */; };
 		FA1602A1297E4CAE00311045 /* FeedHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1602A0297E4CAE00311045 /* FeedHeader.swift */; };
 		FA1602A4297E4CEE00311045 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1602A3297E4CEE00311045 /* MainTabBar.swift */; };
+		FA1602A6297E9D7F00311045 /* BackgroundModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1602A5297E9D7F00311045 /* BackgroundModifiers.swift */; };
 		FA2AC137296DE1C8004D8A87 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC136296DE1C8004D8A87 /* Facility.swift */; };
 		FA2AC1402970F06C004D8A87 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC13F2970F06C004D8A87 /* Command.swift */; };
 		FA2AC1422970FF79004D8A87 /* Commander.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC1412970FF79004D8A87 /* Commander.swift */; };
@@ -90,6 +91,7 @@
 		FA16029C297DC98400311045 /* FeedPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPreview.swift; sourceTree = "<group>"; };
 		FA1602A0297E4CAE00311045 /* FeedHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeader.swift; sourceTree = "<group>"; };
 		FA1602A3297E4CEE00311045 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		FA1602A5297E9D7F00311045 /* BackgroundModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModifiers.swift; sourceTree = "<group>"; };
 		FA2AC136296DE1C8004D8A87 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		FA2AC13F2970F06C004D8A87 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FA2AC1412970FF79004D8A87 /* Commander.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commander.swift; sourceTree = "<group>"; };
@@ -189,6 +191,13 @@
 				FA1602A3297E4CEE00311045 /* MainTabBar.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		FA1602A7297F6FF000311045 /* Crew */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Crew;
 			sourceTree = "<group>";
 		};
 		FA2AC13C2970E93B004D8A87 /* Command */ = {
@@ -349,6 +358,7 @@
 		FAA40BBE294D08C300FF153B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FA1602A7297F6FF000311045 /* Crew */,
 				FA1602A2297E4CD600311045 /* Navigation */,
 				FA2AC1622975E3A5004D8A87 /* Hub */,
 				FA2AC15629754F1A004D8A87 /* Asset */,
@@ -396,6 +406,7 @@
 				FA2AC160297550F4004D8A87 /* ModalModifiers.swift */,
 				FA2AC177297A23FC004D8A87 /* Theme.swift */,
 				FA2AC179297B44C3004D8A87 /* Logic.swift */,
+				FA1602A5297E9D7F00311045 /* BackgroundModifiers.swift */,
 			);
 			path = "View Modifiers";
 			sourceTree = "<group>";
@@ -568,6 +579,7 @@
 				FA8BC16F2959303F00965337 /* CrewSelectorView.swift in Sources */,
 				FA2AC15C29754F56004D8A87 /* AssetSeedBank.swift in Sources */,
 				FAA40B8C294C6DF600FF153B /* ContentView.swift in Sources */,
+				FA1602A6297E9D7F00311045 /* BackgroundModifiers.swift in Sources */,
 				FA2AC1402970F06C004D8A87 /* Command.swift in Sources */,
 				FA8DF2332953BB400074833D /* ManualView.swift in Sources */,
 				FA2AC178297A23FC004D8A87 /* Theme.swift in Sources */,

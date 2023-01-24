@@ -54,15 +54,7 @@ struct FacilityView: View {
         }
         .modifier(Nav(title: facility.name ?? "Facility"))
         .padding(12)
-        .background (
-            facility.backgroundImage()
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: .infinity)
-                .background(Color.black)
-                .opacity(0.4)
-                .allowsHitTesting(false)
-        )
+        .imageBG(image: facility.backgroundImage(), opacity: 0.4)
     }
 }
 

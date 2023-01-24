@@ -13,7 +13,8 @@ struct CrewMemberItem: View {
     var body: some View {
         ZStack {
             HStack {
-                VStack {
+                Icon(name: "person.fill")
+                VStack(spacing: 4) {
                     HStack {
                         Text(String(member.name!))
                         Spacer()
@@ -23,16 +24,9 @@ struct CrewMemberItem: View {
                             .font(Font.custom(CustomFont.Technical.rawValue, size: 10))
                         Spacer()
                     }
-                    
                 }
                 
-                
                 VStack(spacing: 8) {
-//                    HStack {
-                        
-//                        Icon(name: "person", theme: .Beta)
-//                    }
-                    
                     HStack {
                         ProgressView(value: 0.5)
                             .tint(Theme.Health)
@@ -61,8 +55,10 @@ struct CrewMemberItem: View {
                 }
                 .frame(width: 150)
             }
-            .padding(2)
-            .modifier(Border(theme: .Beta))
+            .padding(8)
+            .background(Theme.Beta.color)
+            .cornerRadius(8)
+            .modifier(Border(padding: 0))
         }
         .padding(2)
         .frame(maxWidth: .infinity)

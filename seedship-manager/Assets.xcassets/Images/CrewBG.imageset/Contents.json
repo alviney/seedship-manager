@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Nerfherder_spaceship_cryogenic_room_with_many_doors_unreal_engi_9b7cc7d8-5f06-439d-aa9a-9ff5a432fad9.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

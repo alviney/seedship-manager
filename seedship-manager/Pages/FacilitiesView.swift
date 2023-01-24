@@ -13,7 +13,6 @@ struct FacilitiesView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                //                CustomColor.BackgroundFacility.color.ignoresSafeArea()
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 24) {
                         ForEach (facilities) { facility in
@@ -51,6 +50,7 @@ struct FacilitiesView: View {
             }
             .modifier(Nav(title: "Facilities"))
             .padding(12)
+            .imageBG(image: Image(CustomImage.HomeBackground.rawValue))
         }
         .foregroundColor(Theme.Beta.text)
         .tint(Theme.Alpha.navigation)

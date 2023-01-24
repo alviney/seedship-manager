@@ -17,4 +17,11 @@ enum CustomImage: String {
     case BioFarm = "ImageBioFarm"
     case CryoChamber = "ImageCryoDoor"
     case EngineRoom = "ImageEngineRoom"
+    case HomeBackground = "ImageStars01"
+    case CrewBackground = "CrewBG"
+    case CrewBackgroundAwake = "CrewBGAwake"
+    
+    static func Avatar() -> String {
+        return "Crew01"
+    }
 }
